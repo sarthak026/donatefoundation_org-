@@ -10,9 +10,9 @@ const DonateButton: React.FC = () => {
   return (
     <Button 
       onClick={() => navigate('/donate')}
-      className="fixed bottom-6 right-6 z-40 flex items-center bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white rounded-md shadow-lg transition-all transform hover:scale-105 px-5 py-6"
+      className="fixed bottom-6 right-6 z-40 flex items-center bg-secondary hover:bg-secondary/90 text-white rounded-full shadow-lg transition-all transform hover:scale-105 px-5 py-6"
       aria-label="Register as Donor"
-      variant="outline"
+      variant="secondary"
       size="lg"
     >
       <Heart className="mr-2" size={20} />
