@@ -44,6 +44,15 @@ const transplantData = [
   { name: 'Other', value: 3, color: '#3B82F6' },
 ];
 
+// Chart configuration
+const chartConfig = {
+  kidney: { color: '#F97316', label: 'Kidney' },
+  liver: { color: '#FACC15', label: 'Liver' },
+  heart: { color: '#84CC16', label: 'Heart' },
+  lung: { color: '#10B981', label: 'Lung' },
+  other: { color: '#3B82F6', label: 'Other' },
+};
+
 const Stats: React.FC = () => {
   const [activeYear, setActiveYear] = useState('2023');
 
@@ -104,7 +113,7 @@ const Stats: React.FC = () => {
                 </div>
                 
                 <div className="h-[300px]">
-                  <ResponsiveContainer width="100%" height="100%">
+                  <ChartContainer config={chartConfig}>
                     <PieChart>
                       <Pie
                         data={transplantData}
@@ -116,6 +125,7 @@ const Stats: React.FC = () => {
                         dataKey="value"
                         label={({ name, value }) => `${name}: ${value}%`}
                         labelLine={false}
+                        nameKey="name"
                       >
                         {transplantData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.color} className="hover:opacity-80 transition-opacity" />
@@ -123,7 +133,7 @@ const Stats: React.FC = () => {
                       </Pie>
                       <ChartTooltip content={<ChartTooltipContent />} />
                     </PieChart>
-                  </ResponsiveContainer>
+                  </ChartContainer>
                 </div>
                 
                 <div className="mt-4 space-y-4">
