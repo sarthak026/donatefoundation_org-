@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ContentContainer from '../components/common/ContentContainer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -6,6 +5,7 @@ import { FileText, Image, Video, Newspaper, Calendar, BookOpen, ArrowRight } fro
 import { Link } from 'react-router-dom';
 import DonateButton from '../components/ui/DonateButton';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 
 const Resources: React.FC = () => {
   return (
