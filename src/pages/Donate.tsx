@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import ContentContainer from '../components/common/ContentContainer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Heart, CreditCard, Building, Gift, Landmark, HelpCircle } from 'lucide-react';
+import { Heart, Building, Gift, Landmark, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -37,11 +37,8 @@ const Donate: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-display font-semibold mb-10 text-center">Ways to Give</h2>
           
-          <Tabs defaultValue="monetary" className="w-full">
-            <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-8">
-              <TabsTrigger value="monetary" className="flex items-center gap-2">
-                <CreditCard className="h-4 w-4" /> Financial
-              </TabsTrigger>
+          <Tabs defaultValue="organ" className="w-full">
+            <TabsList className="grid grid-cols-1 md:grid-cols-3 mb-8">
               <TabsTrigger value="organ" className="flex items-center gap-2">
                 <Heart className="h-4 w-4" /> Organ Pledge
               </TabsTrigger>
@@ -52,93 +49,6 @@ const Donate: React.FC = () => {
                 <Gift className="h-4 w-4" /> In-Kind
               </TabsTrigger>
             </TabsList>
-            
-            <TabsContent value="monetary" className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-2xl font-semibold mb-4">Make a Donation</h3>
-                  <p className="text-gray-700 mb-6">
-                    Your financial support directly powers our programs, helping us educate communities 
-                    and increase organ donation registration across India.
-                  </p>
-                  
-                  <div className="mb-6">
-                    <div className="flex justify-center mb-4">
-                      <button 
-                        className={`px-4 py-2 rounded-l-full ${!isMonthly ? 'bg-primary text-white' : 'bg-gray-100'}`}
-                        onClick={() => setIsMonthly(false)}
-                      >
-                        One-time
-                      </button>
-                      <button 
-                        className={`px-4 py-2 rounded-r-full ${isMonthly ? 'bg-primary text-white' : 'bg-gray-100'}`}
-                        onClick={() => setIsMonthly(true)}
-                      >
-                        Monthly
-                      </button>
-                    </div>
-                    
-                    <div className="grid grid-cols-3 gap-3 mb-4">
-                      {[500, 1000, 2500].map((amount) => (
-                        <button
-                          key={amount}
-                          className={`py-2 rounded-md ${donationAmount === amount ? 'bg-primary text-white' : 'bg-gray-100'}`}
-                          onClick={() => selectAmount(amount)}
-                        >
-                          ₹{amount}
-                        </button>
-                      ))}
-                    </div>
-                    
-                    <div className="mb-6">
-                      <label className="block text-gray-700 mb-1">Custom Amount (₹)</label>
-                      <input
-                        type="number"
-                        className="w-full p-2 border rounded-md"
-                        placeholder="Enter amount"
-                        value={typeof donationAmount === 'string' ? donationAmount : ''}
-                        onChange={handleCustomAmount}
-                      />
-                    </div>
-                    
-                    <Button className="w-full py-6 text-lg">
-                      {isMonthly ? 'Donate Monthly' : 'Make Donation'}
-                    </Button>
-                    
-                    <p className="text-sm text-gray-500 mt-3 text-center">
-                      All donations are eligible for tax benefits under 80G in India
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="bg-gray-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-4">Your Impact</h3>
-                  
-                  <div className="space-y-4">
-                    <div className="bg-white p-4 rounded-lg shadow-sm">
-                      <h4 className="font-semibold mb-2">₹500 provides</h4>
-                      <p className="text-gray-600">
-                        Educational materials for 5 schools to teach students about organ donation
-                      </p>
-                    </div>
-                    
-                    <div className="bg-white p-4 rounded-lg shadow-sm">
-                      <h4 className="font-semibold mb-2">₹1,000 provides</h4>
-                      <p className="text-gray-600">
-                        Support materials for 3 donor families during their decision process
-                      </p>
-                    </div>
-                    
-                    <div className="bg-white p-4 rounded-lg shadow-sm">
-                      <h4 className="font-semibold mb-2">₹2,500 provides</h4>
-                      <p className="text-gray-600">
-                        Training for one hospital staff member on organ donation protocols
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
             
             <TabsContent value="organ" className="bg-white p-6 rounded-xl shadow-sm">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

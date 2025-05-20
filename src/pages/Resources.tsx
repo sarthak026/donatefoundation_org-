@@ -25,9 +25,12 @@ const Resources: React.FC = () => {
       {/* Resources Tabs Section */}
       <ContentContainer className="py-16">
         <Tabs defaultValue="news" className="max-w-5xl mx-auto">
-          <TabsList className="grid grid-cols-2 md:grid-cols-5 mb-8">
+          <TabsList className="grid grid-cols-2 md:grid-cols-6 mb-8">
             <TabsTrigger value="news" className="flex items-center gap-2">
               <Newspaper className="h-4 w-4" /> News
+            </TabsTrigger>
+            <TabsTrigger value="events" className="flex items-center gap-2">
+              <Calendar className="h-4 w-4" /> Future Events
             </TabsTrigger>
             <TabsTrigger value="blog" className="flex items-center gap-2">
               <BookOpen className="h-4 w-4" /> Blog
@@ -119,6 +122,143 @@ const Resources: React.FC = () => {
               <Link to="/resources/all-news" className="btn-primary inline-flex items-center">
                 View All News & Events <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
+            </div>
+          </TabsContent>
+
+          {/* Future Events Tab */}
+          <TabsContent value="events" className="bg-white p-6 rounded-xl shadow-sm">
+            <h2 className="text-2xl font-semibold mb-6">Future Events</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white rounded-lg shadow-sm border border-primary/20 overflow-hidden">
+                <div className="h-40 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&auto=format&q=80" 
+                    alt="Annual charity marathon" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-5">
+                  <div className="flex items-center mb-2">
+                    <Calendar className="h-4 w-4 text-primary mr-2" />
+                    <span className="text-sm text-gray-500">June 15, 2025</span>
+                    <span className="bg-primary/10 text-primary text-xs font-semibold px-2 py-1 rounded-full ml-auto">Awareness</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">National Organ Donation Day</h3>
+                  <p className="text-gray-600 mb-4">
+                    Join us for a day of celebration and awareness with special speakers and testimonials...
+                  </p>
+                  <Link to="/resources/events/upcoming/1" className="text-primary font-medium hover:underline inline-flex items-center">
+                    Learn more <ArrowRight size={16} className="ml-1" />
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow-sm border border-primary/20 overflow-hidden">
+                <div className="h-40 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=800&auto=format&q=80" 
+                    alt="Medical conference" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-5">
+                  <div className="flex items-center mb-2">
+                    <Calendar className="h-4 w-4 text-primary mr-2" />
+                    <span className="text-sm text-gray-500">July 23-25, 2025</span>
+                    <span className="bg-secondary/10 text-secondary text-xs font-semibold px-2 py-1 rounded-full ml-auto">Conference</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">International Transplant Conference</h3>
+                  <p className="text-gray-600 mb-4">
+                    Medical professionals from around the world gather to discuss advancements in transplant technology...
+                  </p>
+                  <Link to="/resources/events/upcoming/2" className="text-primary font-medium hover:underline inline-flex items-center">
+                    Learn more <ArrowRight size={16} className="ml-1" />
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow-sm border border-primary/20 overflow-hidden">
+                <div className="h-40 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&auto=format&q=80" 
+                    alt="School workshop" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-5">
+                  <div className="flex items-center mb-2">
+                    <Calendar className="h-4 w-4 text-primary mr-2" />
+                    <span className="text-sm text-gray-500">August 10-14, 2025</span>
+                    <span className="bg-primary/10 text-primary text-xs font-semibold px-2 py-1 rounded-full ml-auto">Workshop</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Youth Ambassador Training Week</h3>
+                  <p className="text-gray-600 mb-4">
+                    Five-day intensive training for high school and college students to become organ donation advocates...
+                  </p>
+                  <Link to="/resources/events/upcoming/3" className="text-primary font-medium hover:underline inline-flex items-center">
+                    Apply now <ArrowRight size={16} className="ml-1" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-10">
+              <h3 className="text-xl font-semibold mb-4">Upcoming Workshops</h3>
+              <div className="overflow-x-auto">
+                <table className="min-w-full bg-white rounded-lg overflow-hidden">
+                  <thead className="bg-gray-50 text-gray-600 text-sm">
+                    <tr>
+                      <th className="py-3 px-4 text-left">Date</th>
+                      <th className="py-3 px-4 text-left">Event</th>
+                      <th className="py-3 px-4 text-left">Location</th>
+                      <th className="py-3 px-4 text-left">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr>
+                      <td className="py-3 px-4">Sep 5, 2025</td>
+                      <td className="py-3 px-4">Family Discussion Workshop</td>
+                      <td className="py-3 px-4">Mumbai Central Community Hall</td>
+                      <td className="py-3 px-4">
+                        <Link to="/resources/events/upcoming/4" className="text-primary hover:underline">Register</Link>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4">Sep 12, 2025</td>
+                      <td className="py-3 px-4">Healthcare Professional Training</td>
+                      <td className="py-3 px-4">Lilavati Hospital, Mumbai</td>
+                      <td className="py-3 px-4">
+                        <Link to="/resources/events/upcoming/5" className="text-primary hover:underline">Register</Link>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4">Sep 18, 2025</td>
+                      <td className="py-3 px-4">Corporate Awareness Program</td>
+                      <td className="py-3 px-4">TCS Offices, Bangalore</td>
+                      <td className="py-3 px-4">
+                        <Link to="/resources/events/upcoming/6" className="text-primary hover:underline">Register</Link>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4">Oct 1, 2025</td>
+                      <td className="py-3 px-4">Religious Leaders Symposium</td>
+                      <td className="py-3 px-4">Delhi Interfaith Center</td>
+                      <td className="py-3 px-4">
+                        <Link to="/resources/events/upcoming/7" className="text-primary hover:underline">Register</Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <Button>
+                <Link to="/resources/events/calendar" className="text-white inline-flex items-center">
+                  View Complete Events Calendar <ArrowRight size={16} className="ml-1" />
+                </Link>
+              </Button>
             </div>
           </TabsContent>
           
