@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import DonateButton from '../components/ui/DonateButton';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import Events from '../components/sections/Events';
 
 const Resources: React.FC = () => {
   return (
@@ -21,6 +22,9 @@ const Resources: React.FC = () => {
           </div>
         </ContentContainer>
       </div>
+
+      {/* Events Section */}
+      <Events />
 
       {/* Resources Tabs Section */}
       <ContentContainer className="py-16">
