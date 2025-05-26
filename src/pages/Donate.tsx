@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import ContentContainer from '../components/common/ContentContainer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Heart, Building, Gift, Landmark, HelpCircle } from 'lucide-react';
+import { Heart, Building, Gift, Landmark, HelpCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -68,7 +68,14 @@ const Donate: React.FC = () => {
                     </ul>
                   </div>
                   
-                  <Button className="w-full">Register as an Organ Donor</Button>
+                  <Button 
+                    onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')}
+                    className="w-full flex items-center gap-2"
+                  >
+                    <Heart className="h-5 w-5" />
+                    Pledge Your Organ
+                    <ExternalLink className="h-4 w-4" />
+                  </Button>
                 </div>
                 
                 <div className="bg-gray-50 p-6 rounded-xl">
