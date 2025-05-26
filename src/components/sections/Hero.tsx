@@ -41,14 +41,14 @@ const Hero: React.FC = () => {
                 <h3 className="text-xl font-semibold text-primary">MOU Announcement</h3>
               </div>
               <p className="text-gray-700">
-                We've signed an MoU with Mohan Foundation to promote awareness and action for organ donation. Together, we aim to create a life-saving impact.
+                We've signed an MoU with Mohan Foundation to promote organ donation awareness.
               </p>
             </div>
 
             {/* Centered Call to Action */}
             <div className="text-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">Are You Ready to Donate Your Organ?</h3>
-              <p className="text-lg mb-6 text-gray-600">👉 Click Here to Pledge Now 👈</p>
+              <p className="text-lg mb-6 text-gray-600">pledge your organ</p>
               <Button 
                 onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')}
                 size="lg" 
