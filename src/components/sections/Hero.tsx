@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart, ExternalLink, Handshake } from 'lucide-react';
@@ -51,7 +52,7 @@ const Hero: React.FC = () => {
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">Are You Ready to Donate Your Organ?</h3>
               <p className="text-lg mb-6 text-gray-600">
             </p>
-              <Button onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')} size="lg" className="text-xl flex gap-2 rounded-full shadow-lg transform hover:scale-105 transition-all text-justify bg-orange-500 hover:bg-orange-400 px-[240px] py-0">
+              <Button onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')} size="lg" className="text-xl flex gap-2 rounded-full shadow-lg transform hover:scale-105 transition-all bg-orange-500 hover:bg-orange-400 px-8 py-3">
                 <Heart className="h-6 w-6" />
                 Pledge Your Organ
                 <ExternalLink className="h-5 w-5" />
