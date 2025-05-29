@@ -1,17 +1,19 @@
+
 import React from 'react';
 import ContentContainer from '../components/common/ContentContainer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { BadgeCheck, BookOpen, Users, Award, FileText, ChartBar, Heart, Globe, Shield, Calendar, Target, TrendingUp, AlertCircle, CheckCircle2, MapPin, GraduationCap, Handshake, Megaphone, Users2 } from 'lucide-react';
+import { BadgeCheck, BookOpen, Users, Award, FileText, ChartBar, Heart, Globe, Shield, Calendar, Target, TrendingUp, AlertCircle, CheckCircle2, MapPin, GraduationCap, Handshake, Megaphone, Users2, Database, RefreshCw, Radio, Computer, Link, Smartphone, DollarSign, Hospital, ReceiptText, Tv, Stethoscope, ClipboardList, Dna } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import DonateButton from '../components/ui/DonateButton';
+
 const WhatWeDo: React.FC = () => {
   return <>
       <div className="pt-24 bg-gradient-to-r from-primary/5 to-secondary/5">
         <ContentContainer>
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">What We Do</h1>
-            <p className="text-xl text-gray-700 mb-10">
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 animate-fade-in">What We Do</h1>
+            <p className="text-xl text-gray-700 mb-10 animate-fade-in" style={{animationDelay: '0.2s'}}>
               Our mission is to create a culture where organ donation is embraced as a fundamental 
               human value, saving thousands of lives each year through education, 
               support, and community action.
@@ -22,7 +24,7 @@ const WhatWeDo: React.FC = () => {
 
       {/* Introduction Section */}
       <ContentContainer className="py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-fade-in" style={{animationDelay: '0.4s'}}>
           <div>
             <h2 className="text-3xl font-display font-semibold mb-6 text-primary" id="workshops">Our Approach</h2>
             <p className="text-gray-700 mb-6">
@@ -35,7 +37,7 @@ const WhatWeDo: React.FC = () => {
               and create pathways for more people to give the gift of life.
             </p>
           </div>
-          <div className="bg-white shadow-md rounded-xl overflow-hidden">
+          <div className="bg-white shadow-md rounded-xl overflow-hidden card-hover">
             <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=800&auto=format&q=80" alt="DonateLife Workshop in progress" className="w-full h-64 object-cover object-center" />
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2">Community Outreach Program</h3>
@@ -48,15 +50,15 @@ const WhatWeDo: React.FC = () => {
       {/* Programs and Initiatives Section */}
       <ContentContainer className="py-16">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6 text-center">Programs and Initiatives</h2>
-          <p className="text-xl text-gray-700 mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6 text-center animate-fade-in">Programs and Initiatives</h2>
+          <p className="text-xl text-gray-700 mb-12 text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
             At DONATE, our initiatives are designed to address the gaps in awareness, access, and ethical 
             practices related to organ donation - because every life saved is a story rewritten.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Promoting Deceased Organ Donation */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{animationDelay: '0.4s'}}>
               <div className="bg-primary/10 p-3 rounded-full inline-flex mb-4">
                 <Heart className="text-primary h-6 w-6" />
               </div>
@@ -95,7 +97,7 @@ const WhatWeDo: React.FC = () => {
             </div>
 
             {/* Rural Outreach Program */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{animationDelay: '0.6s'}}>
               <div className="bg-secondary/10 p-3 rounded-full inline-flex mb-4">
                 <MapPin className="text-secondary h-6 w-6" />
               </div>
@@ -114,7 +116,7 @@ const WhatWeDo: React.FC = () => {
             </div>
 
             {/* Advocating for Ethical Practices */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{animationDelay: '0.8s'}}>
               <div className="bg-primary/10 p-3 rounded-full inline-flex mb-4">
                 <Shield className="text-primary h-6 w-6" />
               </div>
@@ -133,7 +135,7 @@ const WhatWeDo: React.FC = () => {
             </div>
 
             {/* Education and Enablement */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{animationDelay: '1.0s'}}>
               <div className="bg-secondary/10 p-3 rounded-full inline-flex mb-4">
                 <GraduationCap className="text-secondary h-6 w-6" />
               </div>
@@ -152,8 +154,8 @@ const WhatWeDo: React.FC = () => {
           </div>
 
           {/* Additional Programs */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in" style={{animationDelay: '1.2s'}}>
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center card-hover">
               <div className="bg-primary/10 p-3 rounded-full inline-flex mb-4">
                 <Users2 className="text-primary h-6 w-6" />
               </div>
@@ -164,7 +166,7 @@ const WhatWeDo: React.FC = () => {
               <p className="text-sm text-primary font-medium">A new generation of advocates for hope and compassion.</p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center card-hover">
               <div className="bg-secondary/10 p-3 rounded-full inline-flex mb-4">
                 <Handshake className="text-secondary h-6 w-6" />
               </div>
@@ -175,7 +177,7 @@ const WhatWeDo: React.FC = () => {
               <p className="text-sm text-secondary font-medium">Ensuring no donor or recipient feels alone.</p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center card-hover">
               <div className="bg-primary/10 p-3 rounded-full inline-flex mb-4">
                 <Globe className="text-primary h-6 w-6" />
               </div>
@@ -186,7 +188,7 @@ const WhatWeDo: React.FC = () => {
               <p className="text-sm text-primary font-medium">A unified world of ethical organ donation.</p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center">
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center card-hover">
               <div className="bg-secondary/10 p-3 rounded-full inline-flex mb-4">
                 <Megaphone className="text-secondary h-6 w-6" />
               </div>
@@ -195,6 +197,183 @@ const WhatWeDo: React.FC = () => {
                 Using digital outreach and interactive experiences to inspire meaningful action.
               </p>
               <p className="text-sm text-secondary font-medium">Creative methods for lasting change.</p>
+            </div>
+          </div>
+        </div>
+      </ContentContainer>
+
+      {/* Government Initiatives Section - Enhanced */}
+      <ContentContainer className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Government Initiatives: Driving Change
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Discover how India's coordinated government efforts are transforming organ donation through 
+              technology, policy, and strategic partnerships.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* National Organ Donation Framework */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 card-hover animate-fade-in border border-blue-100" style={{animationDelay: '0.2s'}}>
+              <div className="bg-gradient-to-r from-blue-500 to-indigo-500 p-4 rounded-full inline-flex mb-6">
+                <Database className="text-white h-8 w-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-800">National Organ Donation Framework</h3>
+              <p className="text-gray-600 mb-6">
+                The central pillar of India's organ donation system is NOTTO (National Organ and Tissue Transplant Organization). 
+                As a centralized coordination system, NOTTO manages:
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center p-3 bg-blue-50 rounded-lg">
+                  <ClipboardList className="text-blue-600 h-5 w-5 mr-3" />
+                  <span className="text-gray-700">The National Organ Registry</span>
+                </div>
+                <div className="flex items-center p-3 bg-blue-50 rounded-lg">
+                  <RefreshCw className="text-blue-600 h-5 w-5 mr-3" />
+                  <span className="text-gray-700">Transparent organ allocation processes</span>
+                </div>
+                <div className="flex items-center p-3 bg-blue-50 rounded-lg">
+                  <Radio className="text-blue-600 h-5 w-5 mr-3" />
+                  <span className="text-gray-700">Real-time monitoring of donation and transplantation activities</span>
+                </div>
+              </div>
+            </div>
+
+            {/* State-Level Success Stories */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 card-hover animate-fade-in border border-green-100" style={{animationDelay: '0.4s'}}>
+              <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-4 rounded-full inline-flex mb-6">
+                <MapPin className="text-white h-8 w-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-800">State-Level Success Stories</h3>
+              <p className="text-gray-600 mb-6">
+                Several states have emerged as champions of organ donation through localized efforts:
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start p-4 bg-green-50 rounded-lg">
+                  <Stethoscope className="text-green-600 h-5 w-5 mr-3 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-green-800">Maharashtra</h4>
+                    <p className="text-gray-700 text-sm">Leading the way with exemplary models of organ donation coordination</p>
+                  </div>
+                </div>
+                <div className="flex items-start p-4 bg-green-50 rounded-lg">
+                  <Dna className="text-green-600 h-5 w-5 mr-3 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-green-800">Tamil Nadu</h4>
+                    <p className="text-gray-700 text-sm">A pioneer with its innovative deceased donor program</p>
+                  </div>
+                </div>
+                <div className="flex items-start p-4 bg-green-50 rounded-lg">
+                  <Megaphone className="text-green-600 h-5 w-5 mr-3 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-green-800">Karnataka</h4>
+                    <p className="text-gray-700 text-sm">Running impactful awareness campaigns to increase donor registrations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Digital Transformation */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 card-hover animate-fade-in border border-purple-100 mb-8" style={{animationDelay: '0.6s'}}>
+            <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full inline-flex mb-6">
+              <Computer className="text-white h-8 w-8" />
+            </div>
+            <h3 className="text-2xl font-bold mb-6 text-gray-800">Digital Transformation in Organ Donation</h3>
+            <p className="text-gray-600 mb-6">
+              The integration of technology has streamlined the organ donation process:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-purple-50 p-4 rounded-lg text-center">
+                <Computer className="text-purple-600 h-8 w-8 mx-auto mb-3" />
+                <h4 className="font-semibold text-purple-800 mb-2">Online Platforms</h4>
+                <p className="text-gray-700 text-sm">Online donor registration platforms</p>
+              </div>
+              <div className="bg-purple-50 p-4 rounded-lg text-center">
+                <Link className="text-purple-600 h-8 w-8 mx-auto mb-3" />
+                <h4 className="font-semibold text-purple-800 mb-2">Unified Databases</h4>
+                <p className="text-gray-700 text-sm">Unified national databases for organ allocation</p>
+              </div>
+              <div className="bg-purple-50 p-4 rounded-lg text-center">
+                <MapPin className="text-purple-600 h-8 w-8 mx-auto mb-3" />
+                <h4 className="font-semibold text-purple-800 mb-2">Real-time Tracking</h4>
+                <p className="text-gray-700 text-sm">Real-time tracking systems for organ logistics</p>
+              </div>
+              <div className="bg-purple-50 p-4 rounded-lg text-center">
+                <Smartphone className="text-purple-600 h-8 w-8 mx-auto mb-3" />
+                <h4 className="font-semibold text-purple-800 mb-2">Mobile Apps</h4>
+                <p className="text-gray-700 text-sm">Mobile applications for donor enrollment and status updates</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Remarkable Government Strategies */}
+          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl shadow-xl p-8 text-white animate-fade-in" style={{animationDelay: '0.8s'}}>
+            <h3 className="text-3xl font-bold mb-8 text-center">Remarkable Government Strategies</h3>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Awareness and Education */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div className="bg-white/20 p-3 rounded-full inline-flex mb-4">
+                  <GraduationCap className="text-white h-6 w-6" />
+                </div>
+                <h4 className="text-xl font-bold mb-4">Awareness and Education</h4>
+                <p className="mb-4 text-orange-100">
+                  The government has prioritized creating awareness about organ donation through:
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <GraduationCap className="h-4 w-4 mr-3 text-orange-200" />
+                    <span className="text-sm">School and college outreach programs to educate the youth</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Tv className="h-4 w-4 mr-3 text-orange-200" />
+                    <span className="text-sm">Nationwide media campaigns, including TV, radio, and social media</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Users className="h-4 w-4 mr-3 text-orange-200" />
+                    <span className="text-sm">Active involvement of community leaders to build trust</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Globe className="h-4 w-4 mr-3 text-orange-200" />
+                    <span className="text-sm">Dedicated digital platforms share accurate information</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Financial Support Mechanisms */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <div className="bg-white/20 p-3 rounded-full inline-flex mb-4">
+                  <DollarSign className="text-white h-6 w-6" />
+                </div>
+                <h4 className="text-xl font-bold mb-4">Financial Support Mechanisms</h4>
+                <p className="mb-4 text-orange-100">
+                  To reduce economic barriers, the government offers:
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <DollarSign className="h-4 w-4 mr-3 text-orange-200" />
+                    <span className="text-sm">Subsidized costs for organ transplantation surgeries</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Hospital className="h-4 w-4 mr-3 text-orange-200" />
+                    <span className="text-sm">Expanded coverage under public health schemes</span>
+                  </div>
+                  <div className="flex items-center">
+                    <ReceiptText className="h-4 w-4 mr-3 text-orange-200" />
+                    <span className="text-sm">Financial assistance programs for economically disadvantaged patients</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <Button className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-3 rounded-full text-lg font-semibold">
+                Learn More About Government Support
+              </Button>
             </div>
           </div>
         </div>
@@ -656,4 +835,5 @@ const WhatWeDo: React.FC = () => {
       <DonateButton />
     </>;
 };
+
 export default WhatWeDo;
