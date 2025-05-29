@@ -5,10 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { BadgeCheck, BookOpen, Users, Award, FileText, ChartBar, Heart, Globe, Shield, Calendar, Target, TrendingUp, AlertCircle, CheckCircle2, MapPin, GraduationCap, Handshake, Megaphone, Users2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import DonateButton from '../components/ui/DonateButton';
-
 const WhatWeDo: React.FC = () => {
-  return (
-    <>
+  return <>
       <div className="pt-24 bg-gradient-to-r from-primary/5 to-secondary/5">
         <ContentContainer>
           <div className="max-w-4xl mx-auto text-center">
@@ -38,11 +36,7 @@ const WhatWeDo: React.FC = () => {
             </p>
           </div>
           <div className="bg-white shadow-md rounded-xl overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=800&auto=format&q=80" 
-              alt="DonateLife Workshop in progress" 
-              className="w-full h-64 object-cover object-center"
-            />
+            <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=800&auto=format&q=80" alt="DonateLife Workshop in progress" className="w-full h-64 object-cover object-center" />
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2">Community Outreach Program</h3>
               <p className="text-gray-600">Our team members conducting an awareness workshop at a local community center in Mumbai.</p>
@@ -254,23 +248,23 @@ const WhatWeDo: React.FC = () => {
                 <h4 className="font-semibold mb-3">Policy Evolution Timeline:</h4>
                 <div className="space-y-3">
                   <div className="flex items-center">
-                    <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">94</div>
+                    <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">1094</div>
                     <span className="text-gray-700">Enactment of the Organ Donation Act</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">11</div>
+                    <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">2011</div>
                     <span className="text-gray-700">Key amendments to tighten regulations</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">14</div>
+                    <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">2014</div>
                     <span className="text-gray-700">Introduction of nationwide organ allocation system</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">18</div>
+                    <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">2018</div>
                     <span className="text-gray-700">Rollout of digital registration for donors and recipients</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">22</div>
+                    <div className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">2022</div>
                     <span className="text-gray-700">Expanded protocols for deceased donor programs</span>
                   </div>
                 </div>
@@ -455,11 +449,7 @@ const WhatWeDo: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <img 
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&q=80" 
-              alt="Educational workshop with participants" 
-              className="w-full h-64 object-cover rounded-lg"
-            />
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&q=80" alt="Educational workshop with participants" className="w-full h-64 object-cover rounded-lg" />
           </TabsContent>
           
           <TabsContent value="support" className="bg-white p-6 rounded-xl shadow-sm">
@@ -482,11 +472,7 @@ const WhatWeDo: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <img 
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&q=80" 
-              alt="Support group meeting" 
-              className="w-full h-64 object-cover rounded-lg"
-            />
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&q=80" alt="Support group meeting" className="w-full h-64 object-cover rounded-lg" />
           </TabsContent>
           
           <TabsContent value="partnerships" className="bg-white p-6 rounded-xl shadow-sm">
@@ -509,11 +495,7 @@ const WhatWeDo: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <img 
-              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&auto=format&q=80" 
-              alt="Medical staff training session" 
-              className="w-full h-64 object-cover rounded-lg"
-            />
+            <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&auto=format&q=80" alt="Medical staff training session" className="w-full h-64 object-cover rounded-lg" />
           </TabsContent>
         </Tabs>
       </ContentContainer>
@@ -530,11 +512,7 @@ const WhatWeDo: React.FC = () => {
             <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <img 
-                    src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=200&auto=format&q=80" 
-                    alt="Arjun Sharma" 
-                    className="w-16 h-16 rounded-full object-cover mr-4"
-                  />
+                  <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=200&auto=format&q=80" alt="Arjun Sharma" className="w-16 h-16 rounded-full object-cover mr-4" />
                   <div>
                     <h3 className="font-semibold text-xl">Arjun Sharma</h3>
                     <p className="text-primary">Heart Recipient</p>
@@ -552,11 +530,7 @@ const WhatWeDo: React.FC = () => {
             <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <img 
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&auto=format&q=80" 
-                    alt="Priya Malhotra" 
-                    className="w-16 h-16 rounded-full object-cover mr-4"
-                  />
+                  <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&auto=format&q=80" alt="Priya Malhotra" className="w-16 h-16 rounded-full object-cover mr-4" />
                   <div>
                     <h3 className="font-semibold text-xl">Priya Malhotra</h3>
                     <p className="text-secondary">Donor Family Member</p>
@@ -600,7 +574,9 @@ const WhatWeDo: React.FC = () => {
                       <span className="text-primary font-semibold">12,500+</span>
                     </div>
                     <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full" style={{ width: '85%' }}></div>
+                      <div className="h-full bg-primary rounded-full" style={{
+                      width: '85%'
+                    }}></div>
                     </div>
                   </div>
                   
@@ -610,7 +586,9 @@ const WhatWeDo: React.FC = () => {
                       <span className="text-primary font-semibold">4,300+</span>
                     </div>
                     <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full" style={{ width: '65%' }}></div>
+                      <div className="h-full bg-primary rounded-full" style={{
+                      width: '65%'
+                    }}></div>
                     </div>
                   </div>
                   
@@ -620,7 +598,9 @@ const WhatWeDo: React.FC = () => {
                       <span className="text-primary font-semibold">210</span>
                     </div>
                     <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full" style={{ width: '75%' }}></div>
+                      <div className="h-full bg-primary rounded-full" style={{
+                      width: '75%'
+                    }}></div>
                     </div>
                   </div>
                 </div>
@@ -674,8 +654,6 @@ const WhatWeDo: React.FC = () => {
       </ContentContainer>
 
       <DonateButton />
-    </>
-  );
+    </>;
 };
-
 export default WhatWeDo;
