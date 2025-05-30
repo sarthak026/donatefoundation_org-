@@ -594,6 +594,267 @@ const Resources: React.FC = () => {
                     </p>
                   </AccordionContent>
                 </AccordionItem>
+                
+                <AccordionItem value="item-8">
+                  <AccordionTrigger>What is organ donation?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Organ donation is the process of giving an organ or tissue to someone in need of a transplant. It
+                      can be done during life (living donation) or after death (deceased donation).
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-9">
+                  <AccordionTrigger>Why is organ donation important?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Organ donation saves lives. Thousands of people in India suffer from organ failure, and a single
+                      donor can save up to eight lives and improve the lives of many others through tissue donation.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-10">
+                  <AccordionTrigger>Who can become an organ donor?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Almost anyone can be an organ donor, regardless of age or medical history. Medical professionals
+                      will evaluate the condition of your organs at the time of donation to determine suitability.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-11">
+                  <AccordionTrigger>How do I register as an organ donor?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      You can register online through the official government portal (NOTTO), state-specific organ
+                      donation registries, or by signing up at a hospital. It's also important to inform your family about
+                      your decision.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-12">
+                  <AccordionTrigger>Do I need a donor card to be an organ donor?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      A donor card is a symbol of your intent to donate, but the final decision rests with your family.
+                      This is why discussing your wishes with them is crucial.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-13">
+                  <AccordionTrigger>What is living organ donation?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Living organ donation allows a healthy person to donate a kidney or a portion of their liver to
+                      someone in need. This is possible because the human body can function with just one kidney, and
+                      the liver regenerates.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-14">
+                  <AccordionTrigger>Who can be a living donor?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Typically, close relatives such as parents, siblings, children, or spouses can be living donors. In
+                      special cases, unrelated individuals may donate with government approval.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-15">
+                  <AccordionTrigger>Does living donation pose any health risks?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Living donors undergo extensive medical testing to ensure their safety. While all surgeries carry
+                      some risk, most living donors recover fully and lead normal lives.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-16">
+                  <AccordionTrigger>Will I need to take medication for life after donating an organ?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      No. Unlike transplant recipients, organ donors do not need lifelong medication. However, they
+                      will have follow-up checkups to monitor their health.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-17">
+                  <AccordionTrigger>What is deceased organ donation?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Deceased organ donation happens when a person, after being declared brain dead, donates their
+                      organs to save others. The donation process follows strict medical and legal protocols.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-18">
+                  <AccordionTrigger>What organs and tissues can be donated after death?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700 mb-3">The following can be donated:</p>
+                    <p className="text-gray-700 mb-2"><strong>Organs:</strong> Kidneys, liver, heart, lungs, pancreas, intestines</p>
+                    <p className="text-gray-700"><strong>Tissues:</strong> Corneas, skin, bone, heart valves, blood vessels, and cartilage</p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-19">
+                  <AccordionTrigger>How is brain death determined?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Brain death is a medical condition in which the brain stops functioning permanently. It is
+                      diagnosed by a team of doctors through rigorous testing and must be confirmed before organ
+                      donation can take place.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-20">
+                  <AccordionTrigger>Will organ donation affect funeral arrangements?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      No. The body is treated with respect during organ retrieval, and families can proceed with
+                      traditional funeral rites, including open-casket ceremonies.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-21">
+                  <AccordionTrigger>Is organ donation legal in India?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Yes. The Transplantation of Human Organs and Tissues Act (THOTA), 1994, regulates organ
+                      donation and prohibits organ trafficking. The law ensures that organ allocation is ethical and
+                      transparent.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-22">
+                  <AccordionTrigger>Can my organs be taken without my consent?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      No. Organ donation requires consent from the donor (if registered) or the family. Strict laws
+                      prevent unauthorized organ retrieval.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-23">
+                  <AccordionTrigger>How are donated organs allocated?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Organ allocation is managed by NOTTO and is based on medical urgency, blood and tissue
+                      compatibility, and waiting time. Wealth or social status does not influence the process.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-24">
+                  <AccordionTrigger>Are there any religious restrictions on organ donation?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Most major religions support organ donation as an act of compassion and saving lives. If you have
+                      concerns, consult your religious leader.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-25">
+                  <AccordionTrigger>Does organ donation cost money?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      No. The donor's family does not bear any medical expenses related to organ donation. Hospitals
+                      and government programs cover these costs.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-26">
+                  <AccordionTrigger>If I register as a donor, will doctors try less to save my life?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      No. A doctor's first priority is to save lives. Organ donation is only considered after all life-saving
+                      measures fail and brain death is confirmed.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-27">
+                  <AccordionTrigger>Can someone buy an organ in India?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      No. Buying or selling organs is illegal in India under the Transplantation of Human Organs Act.
+                      Violators face severe legal penalties.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-28">
+                  <AccordionTrigger>Will my family receive money or benefits if I donate my organs?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      No. Organ donation is purely voluntary and altruistic. No financial incentives are given for organ
+                      donation.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-29">
+                  <AccordionTrigger>Can I change my mind after registering as a donor?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Yes. You can revoke your decision at any time by updating your registration status and informing
+                      your family.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-30">
+                  <AccordionTrigger>Can cancer patients donate organs?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      In most cases, individuals with active cancer cannot donate organs. However, those with a history
+                      of certain treated cancers may be eligible for donation.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-31">
+                  <AccordionTrigger>Can people with diabetes or hypertension donate organs?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Yes, depending on the severity and overall health. A medical evaluation determines suitability.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-32">
+                  <AccordionTrigger>Is there an age limit for organ donation?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      No strict age limit exists. Each case is assessed based on organ health rather than age alone.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-33">
+                  <AccordionTrigger>Can a person with HIV donate organs?</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-gray-700">
+                      Individuals with HIV can donate organs to HIV-positive recipients under certain medical
+                      conditions.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
               </Accordion>
               
               <div className="mt-8 text-center">
