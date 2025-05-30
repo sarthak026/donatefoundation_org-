@@ -11,6 +11,7 @@ import GetInvolved from "./pages/GetInvolved";
 import Donate from "./pages/Donate";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
+import OrganDonation from "./pages/OrganDonation";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/donate" element={<Donate />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/organ-donation" element={<OrganDonation />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
