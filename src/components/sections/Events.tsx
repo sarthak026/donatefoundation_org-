@@ -130,15 +130,79 @@ const Events: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-800">
-            Events
+            News and Events
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover our past achievements and join us in upcoming events that make a difference in organ donation awareness.
+            Stay updated with our latest news, discover our past achievements, and join us in upcoming events that make a difference in organ donation awareness.
           </p>
         </div>
 
-        {/* Past Events Section */}
+        {/* Upcoming Events Section */}
         <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-display font-semibold mb-4 text-gray-800">Upcoming Events</h3>
+            <p className="text-lg text-gray-600">Join us in making a difference through these upcoming initiatives</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {upcomingEvents.map((event) => (
+              <Card key={event.id} className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden group hover:-translate-y-2">
+                <CardHeader className="bg-gradient-to-r from-teal-500 to-teal-600 text-white">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <CardTitle className="text-xl font-semibold mb-2 text-white">
+                        {event.title}
+                      </CardTitle>
+                      <div className="flex items-center gap-4 text-teal-100">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="h-4 w-4" />
+                          <span className="text-sm">{event.date}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Users className="h-4 w-4" />
+                          <span className="text-sm">{event.attendees}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="p-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2 text-gray-600">
+                      <Calendar className="h-4 w-4 text-teal-500" />
+                      <span className="font-medium">{event.time}</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-gray-600">
+                      <MapPin className="h-4 w-4 text-teal-500" />
+                      <span>{event.location}</span>
+                    </div>
+                    
+                    <CardDescription className="text-gray-600 leading-relaxed">
+                      {event.description}
+                    </CardDescription>
+                    
+                    <div className="pt-4">
+                      {event.registrationOpen ? (
+                        <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white rounded-xl py-3 font-medium transition-all duration-200 hover:shadow-lg">
+                          Register Now
+                        </Button>
+                      ) : (
+                        <Button variant="outline" className="w-full border-gray-300 text-gray-600 rounded-xl py-3 font-medium" disabled>
+                          Registration Closed
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Past Events Section */}
+        <div>
           <div className="text-center mb-8">
             <h3 className="text-3xl font-display font-semibold mb-4 text-gray-800">Past Events</h3>
             
@@ -250,70 +314,6 @@ const Events: React.FC = () => {
               </button>
             </div>
           )}
-        </div>
-
-        {/* Upcoming Events Section */}
-        <div>
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-display font-semibold mb-4 text-gray-800">Upcoming Events</h3>
-            <p className="text-lg text-gray-600">Join us in making a difference through these upcoming initiatives</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {upcomingEvents.map((event) => (
-              <Card key={event.id} className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden group hover:-translate-y-2">
-                <CardHeader className="bg-gradient-to-r from-teal-500 to-teal-600 text-white">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="text-xl font-semibold mb-2 text-white">
-                        {event.title}
-                      </CardTitle>
-                      <div className="flex items-center gap-4 text-teal-100">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          <span className="text-sm">{event.date}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Users className="h-4 w-4" />
-                          <span className="text-sm">{event.attendees}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-2 text-gray-600">
-                      <Calendar className="h-4 w-4 text-teal-500" />
-                      <span className="font-medium">{event.time}</span>
-                    </div>
-                    
-                    <div className="flex items-center gap-2 text-gray-600">
-                      <MapPin className="h-4 w-4 text-teal-500" />
-                      <span>{event.location}</span>
-                    </div>
-                    
-                    <CardDescription className="text-gray-600 leading-relaxed">
-                      {event.description}
-                    </CardDescription>
-                    
-                    <div className="pt-4">
-                      {event.registrationOpen ? (
-                        <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white rounded-xl py-3 font-medium transition-all duration-200 hover:shadow-lg">
-                          Register Now
-                        </Button>
-                      ) : (
-                        <Button variant="outline" className="w-full border-gray-300 text-gray-600 rounded-xl py-3 font-medium" disabled>
-                          Registration Closed
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ContentContainer from '../components/common/ContentContainer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -7,6 +6,7 @@ import { Download, ExternalLink, Play, FileText, MessageCircle, Heart, Shield, U
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Events from '../components/sections/Events';
 import DonateButton from '../components/ui/DonateButton';
+import PhotoVideoGallery from '../components/sections/PhotoVideoGallery';
 
 const Resources: React.FC = () => {
   return (
@@ -62,10 +62,7 @@ const Resources: React.FC = () => {
             </TabsContent>
 
             <TabsContent value="photos" className="space-y-8">
-              <div className="text-center py-16">
-                <h3 className="text-2xl font-semibold mb-4">Photos and Videos</h3>
-                <p className="text-gray-600">Gallery of our events and awareness campaigns.</p>
-              </div>
+              <PhotoVideoGallery />
             </TabsContent>
 
             <TabsContent value="faqs" className="space-y-8">
