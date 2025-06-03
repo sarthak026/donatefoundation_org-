@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Image as ImageIcon, Play, Calendar, MapPin, Users } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Image as ImageIcon, Play, Calendar, MapPin, Users, Clock, Award, Target } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
@@ -119,6 +119,70 @@ const PhotoVideoGallery: React.FC = () => {
       duration: "7:45",
       description: "Inspiring stories from volunteers who coordinate donations and support families during their most difficult times.",
       views: "34K views"
+    }
+  ];
+
+  // Featured Past Events with detailed content
+  const pastEvents = [
+    {
+      id: 1,
+      title: "Hope Festival 2023 - Breaking Barriers",
+      date: "August 15, 2023",
+      location: "Kolkata, West Bengal",
+      description: "Our flagship annual event that brought together 8,000 participants from across Eastern India. The festival featured cultural performances, medical camps, and powerful testimonials from organ recipients and donor families.",
+      highlights: [
+        "1,200 new organ donation pledges registered",
+        "Free health screenings for 2,500 attendees",
+        "Live performances by transplant recipients",
+        "Interactive myth-busting sessions"
+      ],
+      impact: "This event led to a 40% increase in organ donation registrations in West Bengal",
+      photos: [
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&auto=format&q=80",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&auto=format&q=80",
+        "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&auto=format&q=80"
+      ],
+      videoUrl: "https://www.youtube.com/watch?v=example1"
+    },
+    {
+      id: 2,
+      title: "Rural Outreach Mission - Bridging Communities",
+      date: "June 22, 2023",
+      location: "15 Villages across Rajasthan",
+      description: "A groundbreaking 10-day mission that reached remote villages in Rajasthan, addressing cultural myths and misconceptions about organ donation through culturally sensitive education programs.",
+      highlights: [
+        "15 villages covered across rural Rajasthan",
+        "Community leaders and religious heads engaged",
+        "Translated materials in local dialects",
+        "Mobile health units provided free check-ups"
+      ],
+      impact: "First-ever organ donation pledges from rural Rajasthan communities",
+      photos: [
+        "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&auto=format&q=80",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&auto=format&q=80",
+        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&auto=format&q=80"
+      ],
+      videoUrl: "https://www.youtube.com/watch?v=example2"
+    },
+    {
+      id: 3,
+      title: "Corporate Partnership Summit 2023",
+      date: "April 10, 2023",
+      location: "Pune, Maharashtra",
+      description: "A strategic summit bringing together 50+ corporate leaders to integrate organ donation awareness into workplace wellness programs and CSR initiatives.",
+      highlights: [
+        "50+ corporate partnerships established",
+        "Employee wellness programs launched",
+        "Workplace organ donation drives initiated",
+        "Corporate volunteer program created"
+      ],
+      impact: "25,000+ employees across partner companies received organ donation education",
+      photos: [
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&auto=format&q=80",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&auto=format&q=80",
+        "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&auto=format&q=80"
+      ],
+      videoUrl: "https://www.youtube.com/watch?v=example3"
     }
   ];
 
@@ -278,6 +342,99 @@ const PhotoVideoGallery: React.FC = () => {
             </button>
           </div>
         )}
+
+        {/* Featured Past Events Section */}
+        <div className="mt-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-800">
+              Featured Past Events
+            </h3>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Detailed insights into our most impactful events that have shaped communities and saved lives
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {pastEvents.map((event) => (
+              <div key={event.id} className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                  {/* Event Content */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-2xl font-bold text-gray-800 mb-2">{event.title}</h4>
+                      <div className="flex items-center gap-4 text-gray-600 mb-4">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="h-4 w-4" />
+                          <span>{event.date}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="h-4 w-4" />
+                          <span>{event.location}</span>
+                        </div>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">{event.description}</p>
+                    </div>
+
+                    <div>
+                      <h5 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                        <Target className="h-5 w-5 text-teal-600" />
+                        Event Highlights
+                      </h5>
+                      <ul className="space-y-2">
+                        {event.highlights.map((highlight, index) => (
+                          <li key={index} className="flex items-start gap-2 text-gray-700">
+                            <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span>{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-teal-50 to-blue-50 p-4 rounded-xl border border-teal-100">
+                      <h5 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
+                        <Award className="h-5 w-5 text-teal-600" />
+                        Impact Achieved
+                      </h5>
+                      <p className="text-gray-700">{event.impact}</p>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                      <Button className="bg-teal-600 hover:bg-teal-700 text-white">
+                        <Play className="h-4 w-4 mr-2" />
+                        Watch Video
+                      </Button>
+                      <Button variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50">
+                        View Gallery
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Event Photos */}
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      {event.photos.slice(0, 2).map((photo, index) => (
+                        <div key={index} className="aspect-video rounded-xl overflow-hidden">
+                          <img
+                            src={photo}
+                            alt={`${event.title} photo ${index + 1}`}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="aspect-video rounded-xl overflow-hidden">
+                      <img
+                        src={event.photos[2]}
+                        alt={`${event.title} photo 3`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Stats Summary */}
         <div className="mt-12 text-center">
