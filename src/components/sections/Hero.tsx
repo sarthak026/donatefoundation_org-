@@ -1,13 +1,38 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, ExternalLink, Handshake } from 'lucide-react';
+import { Heart, ExternalLink, Handshake, Users, Activity } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
     <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/10 z-0"></div>
+      
+      {/* Background Images */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-20 right-10 w-48 h-48 rounded-full overflow-hidden opacity-20 blur-sm">
+          <img 
+            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&auto=format&q=80" 
+            alt="Medical awareness"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute bottom-20 left-10 w-40 h-40 rounded-full overflow-hidden opacity-15 blur-sm">
+          <img 
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&auto=format&q=80" 
+            alt="Healthcare"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute top-1/3 left-1/4 w-32 h-32 rounded-full overflow-hidden opacity-10 blur-sm">
+          <img 
+            src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&auto=format&q=80" 
+            alt="Community support"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
       
       {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
@@ -22,20 +47,32 @@ const Hero: React.FC = () => {
             <span className="text-gray-800">Transforming Futures.</span>
           </h1>
           
-          {/* Key Statistics */}
-          <div className="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl mb-8 animate-fade-in border border-red-100" style={{animationDelay: '0.1s'}}>
+          {/* Key Statistics Highlight */}
+          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl mb-8 animate-fade-in border border-white/50 shadow-lg" style={{animationDelay: '0.1s'}}>
             <p className="text-lg md:text-xl text-gray-800 mb-4 font-semibold">
-              Key Statistics About Organ Donation in India
+              Critical Need for Organ Donation in India
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm md:text-base text-gray-700">
-              <div className="bg-white/60 p-4 rounded-xl">
-                <span className="font-bold text-red-600">17,000-18,000</span> transplants performed annually
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm md:text-base text-gray-700">
+              <div className="bg-gradient-to-r from-red-50 to-pink-50 p-4 rounded-xl border border-red-100">
+                <div className="flex items-center gap-2 mb-2">
+                  <Activity className="h-4 w-4 text-red-500" />
+                  <span className="font-bold text-red-600">39,415</span>
+                </div>
+                <span className="text-xs">Lives saved in 2023</span>
               </div>
-              <div className="bg-white/60 p-4 rounded-xl">
-                <span className="font-bold text-red-600">250,000</span> transplants needed per year
+              <div className="bg-gradient-to-r from-blue-50 to-teal-50 p-4 rounded-xl border border-blue-100">
+                <div className="flex items-center gap-2 mb-2">
+                  <Users className="h-4 w-4 text-blue-500" />
+                  <span className="font-bold text-blue-600">250,000</span>
+                </div>
+                <span className="text-xs">People waiting for organs</span>
               </div>
-              <div className="bg-white/60 p-4 rounded-xl md:col-span-2">
-                Meeting less than <span className="font-bold text-red-600">5%</span> of total demand
+              <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-4 rounded-xl border border-orange-100">
+                <div className="flex items-center gap-2 mb-2">
+                  <Heart className="h-4 w-4 text-orange-500" />
+                  <span className="font-bold text-orange-600">Less than 5%</span>
+                </div>
+                <span className="text-xs">Demand currently met</span>
               </div>
             </div>
           </div>

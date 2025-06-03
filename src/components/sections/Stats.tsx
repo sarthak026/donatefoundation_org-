@@ -1,247 +1,169 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import ContentContainer from '../common/ContentContainer';
 import { Progress } from "@/components/ui/progress";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
-import { Map as MapIcon, CirclePercent, ArrowUp } from "lucide-react";
+import { Heart, Users, Activity, Clock } from "lucide-react";
 
-// Main statistics data
-const yearlyStats = [
+// Simplified main statistics data
+const keyStats = [
   {
     number: '39,415',
-    description: 'Total organ transplants in 2023',
-    color: 'bg-primary',
+    description: 'Lives Saved in 2023',
+    icon: Heart,
+    color: 'from-red-500 to-pink-500',
     increase: '+6.3%',
   },
   {
     number: '17,424',
-    description: 'Deceased donors in 2023',
-    color: 'bg-secondary',
+    description: 'Generous Donors',
+    icon: Users,
+    color: 'from-blue-500 to-teal-500',
     increase: '+3.6%',
   },
   {
     number: '4.5',
-    description: 'Transplants per hour',
-    color: 'bg-blue-500',
+    description: 'Transplants per Hour',
+    icon: Activity,
+    color: 'from-green-500 to-emerald-500',
     increase: '+0.4',
   },
   {
-    number: '104,000+',
-    description: 'People on waiting list',
-    color: 'bg-purple-500',
-    increase: '-1.2%',
+    number: '104K+',
+    description: 'Awaiting Hope',
+    icon: Clock,
+    color: 'from-orange-500 to-yellow-500',
+    increase: 'Need grows',
   },
 ];
 
-// Organ transplant percentage data
-const transplantData = [
-  { name: 'Kidney', value: 58, color: '#F97316' },
-  { name: 'Liver', value: 23, color: '#FACC15' },
-  { name: 'Heart', value: 9, color: '#84CC16' },
-  { name: 'Lung', value: 7, color: '#10B981' },
-  { name: 'Other', value: 3, color: '#3B82F6' },
+// Simplified organ transplant data
+const organData = [
+  { name: 'Kidney', value: 58, color: '#10B981' },
+  { name: 'Liver', value: 23, color: '#F59E0B' },
+  { name: 'Heart', value: 9, color: '#EF4444' },
+  { name: 'Lung', value: 7, color: '#8B5CF6' },
+  { name: 'Other', value: 3, color: '#6B7280' },
 ];
 
-// Chart configuration
-const chartConfig = {
-  kidney: { color: '#F97316', label: 'Kidney' },
-  liver: { color: '#FACC15', label: 'Liver' },
-  heart: { color: '#84CC16', label: 'Heart' },
-  lung: { color: '#10B981', label: 'Lung' },
-  other: { color: '#3B82F6', label: 'Other' },
-};
-
 const Stats: React.FC = () => {
-  const [activeYear, setActiveYear] = useState('2023');
-
   return (
-    <>
-      {/* Top Statistics Bar */}
-      <div className="w-full bg-gradient-to-r from-primary to-primary/80 text-white py-16">
-        <ContentContainer>
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-2">Organ Donation Impact</h2>
-            <p className="text-white/90 max-w-3xl mx-auto">
-              Every donation transforms lives. These statistics highlight the critical importance of donors.
-            </p>
+    <section className="py-16 bg-gradient-to-br from-teal-50 via-white to-blue-50">
+      <ContentContainer>
+        {/* Hero Stats Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full mb-6">
+            <Heart className="h-4 w-4" />
+            <span className="font-medium">Making a Difference Together</span>
           </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {yearlyStats.map((stat, index) => (
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-800">
+            Organ Donation Impact
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Every donation transforms lives. These statistics highlight the critical importance of donors.
+          </p>
+        </div>
+
+        {/* Key Statistics Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {keyStats.map((stat, index) => {
+            const IconComponent = stat.icon;
+            return (
               <div 
                 key={index} 
-                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-all hover:scale-105"
+                className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <div className={`${stat.color} h-3 w-3 rounded-full`}></div>
-                  <div className="flex items-center text-sm font-medium">
-                    <ArrowUp className="h-3 w-3 mr-1" /> 
-                    <span>{stat.increase}</span>
+                <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-5 group-hover:opacity-10 transition-opacity`}></div>
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${stat.color} text-white`}>
+                      <IconComponent className="h-6 w-6" />
+                    </div>
+                    <div className="text-right">
+                      <span className="text-sm font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full">
+                        {stat.increase}
+                      </span>
+                    </div>
                   </div>
+                  <div className="text-3xl font-bold text-gray-800 mb-2">{stat.number}</div>
+                  <div className="text-gray-600 font-medium">{stat.description}</div>
                 </div>
-                <p className="text-4xl md:text-5xl font-display font-bold mb-2">{stat.number}</p>
-                <p className="text-lg text-white/80">{stat.description}</p>
               </div>
-            ))}
-          </div>
-        </ContentContainer>
-      </div>
+            );
+          })}
+        </div>
 
-      {/* Infographic & Map Section */}
-      <ContentContainer className="py-20">
-        <Tabs defaultValue="transplants" className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between mb-12">
-            <h2 className="text-3xl font-display font-semibold mb-4 md:mb-0">Donation Statistics</h2>
-            <TabsList className="bg-muted/50">
-              <TabsTrigger value="transplants" className="data-[state=active]:bg-primary data-[state=active]:text-white">
-                Transplant Types
-              </TabsTrigger>
-              <TabsTrigger value="geographics" className="data-[state=active]:bg-primary data-[state=active]:text-white">
-                Geographic Data
-              </TabsTrigger>
-            </TabsList>
+        {/* Organ Types Visualization */}
+        <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-display font-bold mb-2 text-gray-800">Organ Distribution</h3>
+            <p className="text-gray-600">Understanding the types of life-saving transplants</p>
           </div>
-
-          <TabsContent value="transplants" className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              <div className="bg-gray-50 p-6 rounded-xl">
-                <div className="flex items-center gap-2 mb-6">
-                  <CirclePercent className="text-primary h-5 w-5" />
-                  <h3 className="text-xl font-semibold">Organ Transplant Types</h3>
-                </div>
-                
-                <div className="h-[300px]">
-                  <ChartContainer config={chartConfig}>
-                    <PieChart>
-                      <Pie
-                        data={transplantData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={90}
-                        paddingAngle={3}
-                        dataKey="value"
-                        label={({ name, value }) => `${name}: ${value}%`}
-                        labelLine={false}
-                        nameKey="name"
-                      >
-                        {transplantData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.color} className="hover:opacity-80 transition-opacity" />
-                        ))}
-                      </Pie>
-                      <ChartTooltip content={<ChartTooltipContent />} />
-                    </PieChart>
-                  </ChartContainer>
-                </div>
-                
-                <div className="mt-4 space-y-4">
-                  {transplantData.map((item, index) => (
-                    <div key={index}>
-                      <div className="flex items-center justify-between mb-1">
-                        <div className="flex items-center">
-                          <div className="h-3 w-3 rounded-full mr-2" style={{ backgroundColor: item.color }}></div>
-                          <span className="text-gray-700">{item.name} Transplants</span>
-                        </div>
-                        <span className="text-primary font-semibold">{item.value}%</span>
-                      </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Chart */}
+            <div className="relative">
+              <div className="h-64 w-64 mx-auto">
+                <ChartContainer config={{}}>
+                  <PieChart width={256} height={256}>
+                    <Pie
+                      data={organData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={60}
+                      outerRadius={100}
+                      paddingAngle={2}
+                      dataKey="value"
+                    >
+                      {organData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                    <ChartTooltip content={<ChartTooltipContent />} />
+                  </PieChart>
+                </ChartContainer>
+              </div>
+            </div>
+            
+            {/* Legend */}
+            <div className="space-y-4">
+              {organData.map((item, index) => (
+                <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <div 
+                      className="w-4 h-4 rounded-full" 
+                      style={{ backgroundColor: item.color }}
+                    ></div>
+                    <span className="font-medium text-gray-700">{item.name}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg font-bold text-gray-800">{item.value}%</span>
+                    <div className="w-16">
                       <Progress value={item.value} className="h-2" />
                     </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-xl">
-                <div className="flex items-center gap-2 mb-6">
-                  <MapIcon className="text-primary h-5 w-5" />
-                  <h3 className="text-xl font-semibold">Regional Highlights</h3>
-                </div>
-                
-                {/* Map visualization placeholder */}
-                <div className="h-[300px] bg-white rounded-lg border border-gray-200 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80')]"></div>
-                  <div className="text-center p-4 relative">
-                    <div className="text-xl font-semibold mb-2">Global Donation Network</div>
-                    <p className="text-gray-500 mb-4">Visualization of international donation partnerships</p>
-                    <div className="flex flex-wrap justify-center gap-2">
-                      <div className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">India</div>
-                      <div className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">USA</div>
-                      <div className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm">UK</div>
-                      <div className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">Australia</div>
-                      <div className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">+20 more</div>
-                    </div>
                   </div>
                 </div>
-                
-                <div className="mt-6 space-y-4">
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-gray-700">New Delhi Region</span>
-                      <span className="text-primary font-semibold">2,485 donations</span>
-                    </div>
-                    <Progress value={75} className="h-2" />
-                  </div>
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-gray-700">Mumbai Region</span>
-                      <span className="text-primary font-semibold">1,974 donations</span>
-                    </div>
-                    <Progress value={60} className="h-2" />
-                  </div>
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-gray-700">Chennai Region</span>
-                      <span className="text-primary font-semibold">1,426 donations</span>
-                    </div>
-                    <Progress value={43} className="h-2" />
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
-          </TabsContent>
-          
-          <TabsContent value="geographics" className="mt-0">
-            <div className="bg-gray-50 p-8 rounded-xl">
-              <h3 className="text-2xl font-semibold mb-6">International Cooperation</h3>
-              <p className="text-gray-700 mb-6">
-                DonateLife Foundation collaborates with international organizations to share best 
-                practices and improve organ donation processes globally. Our partnerships span across
-                multiple continents with a focus on training, research, and awareness campaigns.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white p-5 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
-                  <div className="text-xl font-semibold mb-2">Asia Pacific</div>
-                  <p className="text-gray-600 mb-4">Partnerships with 12 countries focusing on living donor programs</p>
-                  <div className="text-primary font-medium">42 hospitals</div>
-                </div>
-                
-                <div className="bg-white p-5 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
-                  <div className="text-xl font-semibold mb-2">Europe & Americas</div>
-                  <p className="text-gray-600 mb-4">Technology exchange programs and research collaboration</p>
-                  <div className="text-primary font-medium">37 organizations</div>
-                </div>
-                
-                <div className="bg-white p-5 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
-                  <div className="text-xl font-semibold mb-2">Africa & Middle East</div>
-                  <p className="text-gray-600 mb-4">Training programs and infrastructure development support</p>
-                  <div className="text-primary font-medium">18 initiatives</div>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-        </Tabs>
-      </ContentContainer>
-      
-      <div className="bg-gray-50 py-8">
-        <ContentContainer>
-          <div className="text-center text-gray-600 max-w-2xl mx-auto">
-            <p>Source: National Organ & Tissue Transplant Organization (NOTTO), Ministry of Health and Family Welfare, Government of India and Global Observatory on Donation and Transplantation (GODT)</p>
           </div>
-        </ContentContainer>
-      </div>
-    </>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-12">
+          <div className="bg-gradient-to-r from-teal-500 to-blue-600 text-white rounded-2xl p-8 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4">Be Part of the Solution</h3>
+            <p className="text-lg mb-6 text-teal-50">
+              One organ donor can save up to 8 lives and enhance the lives of more than 75 people through tissue donation.
+            </p>
+            <div className="inline-flex items-center gap-2 bg-white text-teal-600 px-6 py-3 rounded-full font-semibold hover:bg-teal-50 transition-colors cursor-pointer">
+              <Heart className="h-5 w-5" />
+              Learn How You Can Help
+            </div>
+          </div>
+        </div>
+      </ContentContainer>
+    </section>
   );
 };
 

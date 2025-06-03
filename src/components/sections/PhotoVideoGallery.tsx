@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Image as ImageIcon, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Image as ImageIcon, Play, Calendar, MapPin, Users } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
@@ -13,37 +13,61 @@ const PhotoVideoGallery: React.FC = () => {
       id: 1,
       src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&auto=format&q=80",
       alt: "Organ donation awareness rally",
-      caption: "Annual Awareness Rally 2024"
+      caption: "Annual Awareness Rally 2024",
+      description: "Over 5,000 participants gathered at India Gate for our largest awareness campaign, featuring survivor stories and interactive booths.",
+      date: "March 15, 2024",
+      location: "New Delhi",
+      participants: "5,000+"
     },
     {
       id: 2,
       src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&auto=format&q=80",
       alt: "Hospital donation drive",
-      caption: "Hospital Partnership Drive"
+      caption: "Hospital Partnership Drive",
+      description: "Collaboration with 25 major hospitals across Mumbai to establish organ donation protocols and train medical staff.",
+      date: "February 8, 2024",
+      location: "Mumbai",
+      participants: "500+ medical professionals"
     },
     {
       id: 3,
       src: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&auto=format&q=80",
       alt: "Student participation event",
-      caption: "Youth Ambassador Program"
+      caption: "Youth Ambassador Program",
+      description: "Launch of our youth program with 200 college students becoming certified organ donation advocates for their communities.",
+      date: "January 20, 2024",
+      location: "Bangalore",
+      participants: "200 students"
     },
     {
       id: 4,
       src: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&q=80",
       alt: "Community awareness event",
-      caption: "Community Outreach Program"
+      caption: "Community Outreach Program",
+      description: "Rural awareness campaign reaching 15 villages with culturally sensitive education about organ donation myths and facts.",
+      date: "December 10, 2023",
+      location: "Rural Punjab",
+      participants: "3,000+ villagers"
     },
     {
       id: 5,
       src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&q=80",
       alt: "Medical conference",
-      caption: "Medical Professional Conference"
+      caption: "Medical Professional Conference",
+      description: "International conference bringing together transplant surgeons, coordinators, and ethicists to share best practices.",
+      date: "November 25, 2023",
+      location: "Chennai",
+      participants: "150 experts"
     },
     {
       id: 6,
       src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&q=80",
       alt: "Volunteer training",
-      caption: "Volunteer Training Session"
+      caption: "Volunteer Training Session",
+      description: "Comprehensive training for 100 new volunteers on grief counseling, family support, and donation coordination.",
+      date: "October 15, 2023",
+      location: "Hyderabad",
+      participants: "100 volunteers"
     }
   ];
 
@@ -52,37 +76,49 @@ const PhotoVideoGallery: React.FC = () => {
       id: 1,
       thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&auto=format&q=80",
       title: "Awareness Rally Highlights",
-      duration: "3:45"
+      duration: "3:45",
+      description: "Emotional moments from our biggest awareness event, featuring donor families sharing their stories of hope and healing.",
+      views: "125K views"
     },
     {
       id: 2,
       thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&auto=format&q=80",
       title: "Donor Stories Documentary",
-      duration: "8:20"
+      duration: "8:20",
+      description: "A powerful documentary following three families through their organ donation journey, from decision to impact.",
+      views: "89K views"
     },
     {
       id: 3,
       thumbnail: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&auto=format&q=80",
       title: "Youth Program Overview",
-      duration: "5:15"
+      duration: "5:15",
+      description: "Young ambassadors share their experiences spreading organ donation awareness in their colleges and communities.",
+      views: "67K views"
     },
     {
       id: 4,
       thumbnail: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&q=80",
       title: "Community Impact Stories",
-      duration: "6:30"
+      duration: "6:30",
+      description: "Rural communities breaking myths and embracing organ donation through education and cultural sensitivity.",
+      views: "45K views"
     },
     {
       id: 5,
       thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&q=80",
       title: "Medical Professional Training",
-      duration: "12:15"
+      duration: "12:15",
+      description: "Behind-the-scenes look at how medical professionals are trained in organ procurement and transplantation procedures.",
+      views: "23K views"
     },
     {
       id: 6,
       thumbnail: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&q=80",
       title: "Volunteer Success Stories",
-      duration: "7:45"
+      duration: "7:45",
+      description: "Inspiring stories from volunteers who coordinate donations and support families during their most difficult times.",
+      views: "34K views"
     }
   ];
 
@@ -97,15 +133,19 @@ const PhotoVideoGallery: React.FC = () => {
   );
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-gradient-to-b from-white to-teal-50/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full mb-6">
+            <ImageIcon className="h-4 w-4" />
+            <span className="font-medium">Our Journey in Pictures & Videos</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-800">
             Photos and Videos
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our visual journey through organ donation awareness campaigns, events, and success stories.
+            Explore our visual journey through organ donation awareness campaigns, life-changing events, and inspiring success stories that have touched thousands of lives.
           </p>
         </div>
 
@@ -121,7 +161,7 @@ const PhotoVideoGallery: React.FC = () => {
               }`}
             >
               <ImageIcon className="h-5 w-5" />
-              Photo Gallery
+              Event Photos
             </button>
             <button
               onClick={() => setActiveGallery('videos')}
@@ -132,7 +172,7 @@ const PhotoVideoGallery: React.FC = () => {
               }`}
             >
               <Play className="h-5 w-5" />
-              Video Gallery
+              Video Stories
             </button>
           </div>
         </div>
@@ -150,8 +190,24 @@ const PhotoVideoGallery: React.FC = () => {
                         alt={image.alt}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                        <h4 className="text-white text-xl font-semibold">{image.caption}</h4>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <h4 className="text-2xl font-bold mb-2">{image.caption}</h4>
+                        <p className="text-gray-200 mb-4 leading-relaxed">{image.description}</p>
+                        <div className="flex flex-wrap gap-4 text-sm">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-4 w-4" />
+                            <span>{image.date}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <MapPin className="h-4 w-4" />
+                            <span>{image.location}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Users className="h-4 w-4" />
+                            <span>{image.participants}</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -193,9 +249,13 @@ const PhotoVideoGallery: React.FC = () => {
                           <Play className="h-8 w-8 text-teal-600 ml-1" fill="currentColor" />
                         </div>
                       </div>
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                        <h4 className="text-white text-xl font-semibold mb-1">{video.title}</h4>
-                        <p className="text-white/80">{video.duration}</p>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 text-white">
+                        <h4 className="text-2xl font-bold mb-2">{video.title}</h4>
+                        <p className="text-gray-200 mb-3 leading-relaxed">{video.description}</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-teal-300 font-medium">{video.duration}</span>
+                          <span className="text-gray-300 text-sm">{video.views}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -218,6 +278,31 @@ const PhotoVideoGallery: React.FC = () => {
             </button>
           </div>
         )}
+
+        {/* Stats Summary */}
+        <div className="mt-12 text-center">
+          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold mb-6 text-gray-800">Our Past Events Impact</h3>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-teal-600 mb-2">50+</div>
+                <div className="text-gray-600">Events Organized</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">25,000+</div>
+                <div className="text-gray-600">People Reached</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600 mb-2">1,200+</div>
+                <div className="text-gray-600">New Donors Registered</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-600 mb-2">15</div>
+                <div className="text-gray-600">Cities Covered</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
