@@ -3,9 +3,60 @@ import React from 'react';
 import ContentContainer from '../common/ContentContainer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, MapPin, Users, Heart, Camera, Video, Award } from 'lucide-react';
+import { Calendar, MapPin, Users, Heart, Camera, Video, Award, Play, Image as ImageIcon } from 'lucide-react';
 
 const PhotoVideoGallery: React.FC = () => {
+  const donateFoundationPhotos = [
+    {
+      id: 1,
+      src: "/lovable-uploads/da3607ac-ad59-455e-969a-2c38b8a0ac34.png",
+      title: "Community Awareness Event",
+      description: "DONATE Foundation team and volunteers at a community outreach program with local participants wearing foundation t-shirts",
+      event: "Community Outreach Program",
+      location: "Local Community Center"
+    },
+    {
+      id: 2,
+      src: "/lovable-uploads/04d6dbe6-ee01-4ba1-b5c8-4f348d96aecc.png",
+      title: "Personal Consultation Session",
+      description: "One-on-one counseling session between DONATE Foundation volunteer and community member",
+      event: "Individual Counseling",
+      location: "Community Counseling Center"
+    },
+    {
+      id: 3,
+      src: "/lovable-uploads/c0625d85-03db-48f2-8a8b-f5b1f4f15939.png",
+      title: "Mission Discussion",
+      description: "DONATE Foundation representatives discussing the mission with community members under the foundation banner",
+      event: "Mission Awareness Session",
+      location: "Community Meeting Point"
+    },
+    {
+      id: 4,
+      src: "/lovable-uploads/1b4e1f8d-3b09-4afe-b01a-f0b30b996df9.png",
+      title: "Team Group Photo",
+      description: "DONATE Foundation team members and volunteers in matching t-shirts at a community event",
+      event: "Team Building Event",
+      location: "Community Venue"
+    },
+    {
+      id: 5,
+      src: "/lovable-uploads/54add024-ffe2-46d8-9f8b-398ce53887ae.png",
+      title: "Engaging Conversation",
+      description: "Interactive discussion between DONATE Foundation volunteer and community member about organ donation awareness",
+      event: "Educational Outreach",
+      location: "Community Center"
+    },
+    {
+      id: 6,
+      src: "/lovable-uploads/f2971f61-1d15-4763-abd6-0cfc2317048f.png",
+      title: "Community Engagement",
+      description: "Continuing the conversation about organ donation awareness and community involvement",
+      event: "Awareness Campaign",
+      location: "Local Community Hub"
+    }
+  ];
+
   const pastEvents = [
     {
       id: 1,
@@ -53,7 +104,7 @@ const PhotoVideoGallery: React.FC = () => {
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 w-32 h-32 bg-gradient-to-r from-teal-200 to-blue-200 rounded-full opacity-20 blur-xl"></div>
           <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full mb-6 relative">
             <Camera className="h-4 w-4" />
-            <span className="font-medium">Our Journey in Pictures</span>
+            <span className="font-medium">Our Journey in Pictures & Videos</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-800 relative">
             Past Events & Impact Stories
@@ -85,6 +136,91 @@ const PhotoVideoGallery: React.FC = () => {
               <div className="text-center">
                 <div className="text-3xl font-bold mb-2">18</div>
                 <div className="text-teal-100">States Covered</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Photos Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full mb-4">
+              <ImageIcon className="h-4 w-4" />
+              <span className="font-medium">Photo Gallery</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">DONATE Foundation in Action</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Authentic moments from our community outreach programs, awareness campaigns, and life-changing conversations.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {donateFoundationPhotos.map((photo) => (
+              <div key={photo.id} className="group cursor-pointer">
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-teal-200">
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={photo.src} 
+                      alt={photo.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Badge className="bg-white/20 text-white border-white/30 mb-2">
+                        {photo.event}
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="font-bold text-gray-800 mb-2">{photo.title}</h4>
+                    <p className="text-gray-600 text-sm mb-3">{photo.description}</p>
+                    <div className="flex items-center text-xs text-gray-500">
+                      <MapPin className="h-3 w-3 mr-1" />
+                      {photo.location}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Videos Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full mb-4">
+              <Video className="h-4 w-4" />
+              <span className="font-medium">Video Gallery</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Stories That Inspire</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Watch powerful testimonials, event highlights, and educational content from our mission to save lives.
+            </p>
+          </div>
+          
+          <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-3xl p-12 text-center border border-gray-200">
+            <div className="max-w-2xl mx-auto">
+              <div className="w-20 h-20 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Play className="h-8 w-8 text-white" />
+              </div>
+              <h4 className="text-2xl font-bold text-gray-800 mb-4">Video Content Coming Soon</h4>
+              <p className="text-gray-600 mb-6">
+                We're preparing inspiring video content including event highlights, testimonials, and educational materials. 
+                Check back soon to watch powerful stories of hope and transformation.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                  <Video className="h-6 w-6 text-blue-600 mx-auto mb-2" />
+                  <div className="text-sm font-medium text-gray-800">Event Highlights</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                  <Heart className="h-6 w-6 text-red-600 mx-auto mb-2" />
+                  <div className="text-sm font-medium text-gray-800">Testimonials</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                  <Users className="h-6 w-6 text-green-600 mx-auto mb-2" />
+                  <div className="text-sm font-medium text-gray-800">Educational Content</div>
+                </div>
               </div>
             </div>
           </div>
