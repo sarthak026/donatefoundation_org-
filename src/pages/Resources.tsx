@@ -6,7 +6,7 @@ import { Download, ExternalLink, Play, FileText, MessageCircle, Heart, Shield, U
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Events from '../components/sections/Events';
 import DonateButton from '../components/ui/DonateButton';
-import PhotoVideoGallery from '../components/sections/PhotoVideoGallery';
+import PastEvents from '../components/sections/PastEvents';
 
 const Resources: React.FC = () => {
   return (
@@ -29,15 +29,19 @@ const Resources: React.FC = () => {
           <Tabs defaultValue="events" className="w-full">
             <TabsList className="grid w-full grid-cols-6 mb-8">
               <TabsTrigger value="events">News and Events</TabsTrigger>
+              <TabsTrigger value="past-events">Past Events</TabsTrigger>
               <TabsTrigger value="blog">Blog</TabsTrigger>
               <TabsTrigger value="media">Media Coverage</TabsTrigger>
               <TabsTrigger value="reports">Reports and Publications</TabsTrigger>
-              <TabsTrigger value="photos">Photos and Videos</TabsTrigger>
               <TabsTrigger value="faqs">General FAQs</TabsTrigger>
             </TabsList>
 
             <TabsContent value="events" className="space-y-8">
               <Events />
+            </TabsContent>
+
+            <TabsContent value="past-events" className="space-y-8">
+              <PastEvents />
             </TabsContent>
 
             <TabsContent value="blog" className="space-y-8">
@@ -59,10 +63,6 @@ const Resources: React.FC = () => {
                 <h3 className="text-2xl font-semibold mb-4">Reports and Publications</h3>
                 <p className="text-gray-600">Research papers and annual reports coming soon.</p>
               </div>
-            </TabsContent>
-
-            <TabsContent value="photos" className="space-y-8">
-              <PhotoVideoGallery />
             </TabsContent>
 
             <TabsContent value="faqs" className="space-y-8">
