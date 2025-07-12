@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,123 +5,176 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Heart, Users, AlertTriangle, CheckCircle, Clock, Activity, TrendingUp, MapPin, IndianRupee, ChevronLeft, ChevronRight, BarChart3, Target, Users2 } from 'lucide-react';
-
 const AboutOrganDonation: React.FC = () => {
-  const organTypes = [
-    { name: 'Kidneys', icon: '🫘', description: 'Most commonly transplanted organ' },
-    { name: 'Liver', icon: '🫁', description: 'Can be partially donated by living donors' },
-    { name: 'Heart', icon: '❤️', description: 'Life-saving for heart failure patients' },
-    { name: 'Lungs', icon: '🫁', description: 'Critical for respiratory diseases' },
-    { name: 'Pancreas', icon: '🥞', description: 'Helps diabetes patients' },
-    { name: 'Intestines', icon: '🧬', description: 'For severe bowel conditions' },
-    { name: 'Corneas', icon: '👁️', description: 'Restores sight to the blind' },
-    { name: 'Skin tissues', icon: '🩹', description: 'Helps burn victims recover' },
-    { name: 'Bone marrow', icon: '🦴', description: 'Treats blood cancers' },
-    { name: 'Heart valves', icon: '💝', description: 'Repairs heart defects' }
-  ];
-
-  const myths = [
-    {
-      title: "Medical Professionals Will Compromise Patient Care",
-      content: "Many people fear that being an organ donor means doctors will provide less intensive medical care. This is entirely false. Medical professionals are bound by strict ethical codes and are legally obligated to provide the highest standard of care possible. Organ donation is only considered after all life-saving efforts have been exhausted and brain death has been conclusively determined through multiple medical assessments."
-    },
-    {
-      title: "Age Restricts Organ Donation",
-      content: "There's a widespread belief that only young, healthy individuals can be organ donors. In reality, medical suitability is determined by individual health conditions rather than age alone. Donors have successfully contributed organs from their teenage years well into their seventies. Each potential donor undergoes comprehensive medical screening to assess the viability of their organs."
-    },
-    {
-      title: "Organ Donation is Financially Burdensome",
-      content: "The financial aspect of organ donation is often misunderstood. Contrary to popular belief, organ donation is completely free. The donor's family does not incur any medical expenses related to the donation process. In many cases, government schemes and healthcare programs cover the costs associated with organ retrieval and transplantation."
-    },
-    {
-      title: "Wealthy or Influential People Get Priority in Organ Transplantation",
-      content: "The organ allocation process in India is governed by a transparent and merit-based system. Recipients are prioritized based on medical urgency, compatibility (including blood group and HLA matching), waiting time, and geographical proximity. Factors such as wealth, social status, or personal connections do not influence the selection process. The National Organ and Tissue Transplant Organization (NOTTO) ensures a stringent and fair approach to organ allocation."
-    },
-    {
-      title: "Organ Donation Disfigures the Body",
-      content: "Many potential donors worry about the physical appearance of their body after donation. Modern medical techniques ensure that organ retrieval is performed with the utmost respect and care. The body is carefully preserved, and any surgical interventions are done with surgical precision. Funeral and last rites can proceed exactly as the family wishes, with no visible signs of medical intervention."
-    },
-    {
-      title: "Living Donation is Extremely Risky",
-      content: "While living donations involve surgical procedures, medical advancements have made them increasingly safe. Potential living donors undergo extensive medical and psychological evaluations. Organs like kidneys and a partial liver can be donated with minimal long-term health risks to the donor. Medical teams provide comprehensive pre and post-operative care to ensure donor well-being."
-    },
-    {
-      title: "Black Market Concerns Compromise Donation Integrity",
-      content: "Fears about organ trafficking are serious and legitimate concerns. However, India has implemented robust legal frameworks like the Transplantation of Human Organs Act to prevent illegal organ trade. Strict government regulations, multiple verification processes, and ethical review boards ensure that every organ donation follows transparent, legal protocols."
-    },
-    {
-      title: "Partial or Specific Organ Donation is Not Possible",
-      content: "Many potential donors believe they must donate all organs or none at all. In reality, individuals can choose to donate specific organs or tissues. Whether it's corneas, kidneys, or other organs, donors have the flexibility to specify their preferences. This personalized approach allows individuals to make donation decisions that align with their comfort level."
-    },
-    {
-      title: "Urban Myth of Organs Being Stolen During Medical Procedures",
-      content: "This persistent myth suggests that hospitals might remove organs without consent during routine medical procedures. This is categorically false. Organ donation requires explicit, informed consent from the donor or their family. Multiple legal and medical safeguards protect individuals from unauthorized organ removal. Transparency and family involvement are cornerstones of the donation process."
-    },
-    {
-      title: "Chronic Illnesses Disqualify Individuals from Donation",
-      content: "Not all chronic conditions prevent organ donation. Medical professionals evaluate each potential donor's specific health conditions. Some chronic conditions do not impact the viability of certain organs. A comprehensive medical assessment determines which organs can be safely donated, offering hope even to individuals with complex medical histories."
-    }
-  ];
-
-  const waitTimes = [
-    { organ: 'Kidney', time: '4–7 years', color: 'bg-red-500' },
-    { organ: 'Liver', time: '2–5 years', color: 'bg-orange-500' },
-    { organ: 'Heart', time: '3–6 years', color: 'bg-red-600' },
-    { organ: 'Cornea', time: '6–12 months', color: 'bg-green-500' }
-  ];
-
-  const successRates = [
-    { organ: 'Overall', rate: '85–90%', color: 'text-green-600' },
-    { organ: 'Kidney', rate: '90–95%', color: 'text-green-600' },
-    { organ: 'Liver', rate: '80–85%', color: 'text-green-500' },
-    { organ: 'Heart', rate: '85–90%', color: 'text-green-600' },
-    { organ: 'Corneal', rate: '95%', color: 'text-green-700' }
-  ];
-
+  const organTypes = [{
+    name: 'Kidneys',
+    icon: '🫘',
+    description: 'Most commonly transplanted organ'
+  }, {
+    name: 'Liver',
+    icon: '🫁',
+    description: 'Can be partially donated by living donors'
+  }, {
+    name: 'Heart',
+    icon: '❤️',
+    description: 'Life-saving for heart failure patients'
+  }, {
+    name: 'Lungs',
+    icon: '🫁',
+    description: 'Critical for respiratory diseases'
+  }, {
+    name: 'Pancreas',
+    icon: '🥞',
+    description: 'Helps diabetes patients'
+  }, {
+    name: 'Intestines',
+    icon: '🧬',
+    description: 'For severe bowel conditions'
+  }, {
+    name: 'Corneas',
+    icon: '👁️',
+    description: 'Restores sight to the blind'
+  }, {
+    name: 'Skin tissues',
+    icon: '🩹',
+    description: 'Helps burn victims recover'
+  }, {
+    name: 'Bone marrow',
+    icon: '🦴',
+    description: 'Treats blood cancers'
+  }, {
+    name: 'Heart valves',
+    icon: '💝',
+    description: 'Repairs heart defects'
+  }];
+  const myths = [{
+    title: "Medical Professionals Will Compromise Patient Care",
+    content: "Many people fear that being an organ donor means doctors will provide less intensive medical care. This is entirely false. Medical professionals are bound by strict ethical codes and are legally obligated to provide the highest standard of care possible. Organ donation is only considered after all life-saving efforts have been exhausted and brain death has been conclusively determined through multiple medical assessments."
+  }, {
+    title: "Age Restricts Organ Donation",
+    content: "There's a widespread belief that only young, healthy individuals can be organ donors. In reality, medical suitability is determined by individual health conditions rather than age alone. Donors have successfully contributed organs from their teenage years well into their seventies. Each potential donor undergoes comprehensive medical screening to assess the viability of their organs."
+  }, {
+    title: "Organ Donation is Financially Burdensome",
+    content: "The financial aspect of organ donation is often misunderstood. Contrary to popular belief, organ donation is completely free. The donor's family does not incur any medical expenses related to the donation process. In many cases, government schemes and healthcare programs cover the costs associated with organ retrieval and transplantation."
+  }, {
+    title: "Wealthy or Influential People Get Priority in Organ Transplantation",
+    content: "The organ allocation process in India is governed by a transparent and merit-based system. Recipients are prioritized based on medical urgency, compatibility (including blood group and HLA matching), waiting time, and geographical proximity. Factors such as wealth, social status, or personal connections do not influence the selection process. The National Organ and Tissue Transplant Organization (NOTTO) ensures a stringent and fair approach to organ allocation."
+  }, {
+    title: "Organ Donation Disfigures the Body",
+    content: "Many potential donors worry about the physical appearance of their body after donation. Modern medical techniques ensure that organ retrieval is performed with the utmost respect and care. The body is carefully preserved, and any surgical interventions are done with surgical precision. Funeral and last rites can proceed exactly as the family wishes, with no visible signs of medical intervention."
+  }, {
+    title: "Living Donation is Extremely Risky",
+    content: "While living donations involve surgical procedures, medical advancements have made them increasingly safe. Potential living donors undergo extensive medical and psychological evaluations. Organs like kidneys and a partial liver can be donated with minimal long-term health risks to the donor. Medical teams provide comprehensive pre and post-operative care to ensure donor well-being."
+  }, {
+    title: "Black Market Concerns Compromise Donation Integrity",
+    content: "Fears about organ trafficking are serious and legitimate concerns. However, India has implemented robust legal frameworks like the Transplantation of Human Organs Act to prevent illegal organ trade. Strict government regulations, multiple verification processes, and ethical review boards ensure that every organ donation follows transparent, legal protocols."
+  }, {
+    title: "Partial or Specific Organ Donation is Not Possible",
+    content: "Many potential donors believe they must donate all organs or none at all. In reality, individuals can choose to donate specific organs or tissues. Whether it's corneas, kidneys, or other organs, donors have the flexibility to specify their preferences. This personalized approach allows individuals to make donation decisions that align with their comfort level."
+  }, {
+    title: "Urban Myth of Organs Being Stolen During Medical Procedures",
+    content: "This persistent myth suggests that hospitals might remove organs without consent during routine medical procedures. This is categorically false. Organ donation requires explicit, informed consent from the donor or their family. Multiple legal and medical safeguards protect individuals from unauthorized organ removal. Transparency and family involvement are cornerstones of the donation process."
+  }, {
+    title: "Chronic Illnesses Disqualify Individuals from Donation",
+    content: "Not all chronic conditions prevent organ donation. Medical professionals evaluate each potential donor's specific health conditions. Some chronic conditions do not impact the viability of certain organs. A comprehensive medical assessment determines which organs can be safely donated, offering hope even to individuals with complex medical histories."
+  }];
+  const waitTimes = [{
+    organ: 'Kidney',
+    time: '4–7 years',
+    color: 'bg-red-500'
+  }, {
+    organ: 'Liver',
+    time: '2–5 years',
+    color: 'bg-orange-500'
+  }, {
+    organ: 'Heart',
+    time: '3–6 years',
+    color: 'bg-red-600'
+  }, {
+    organ: 'Cornea',
+    time: '6–12 months',
+    color: 'bg-green-500'
+  }];
+  const successRates = [{
+    organ: 'Overall',
+    rate: '85–90%',
+    color: 'text-green-600'
+  }, {
+    organ: 'Kidney',
+    rate: '90–95%',
+    color: 'text-green-600'
+  }, {
+    organ: 'Liver',
+    rate: '80–85%',
+    color: 'text-green-500'
+  }, {
+    organ: 'Heart',
+    rate: '85–90%',
+    color: 'text-green-600'
+  }, {
+    organ: 'Corneal',
+    rate: '95%',
+    color: 'text-green-700'
+  }];
   const [currentMythIndex, setCurrentMythIndex] = useState(0);
   const [currentStatIndex, setCurrentStatIndex] = useState(0);
-
   const nextMyth = () => {
-    setCurrentMythIndex((prev) => (prev + 1) % myths.length);
+    setCurrentMythIndex(prev => (prev + 1) % myths.length);
   };
-
   const prevMyth = () => {
-    setCurrentMythIndex((prev) => (prev - 1 + myths.length) % myths.length);
+    setCurrentMythIndex(prev => (prev - 1 + myths.length) % myths.length);
   };
-
-  const statsData = [
-    {
-      title: "Organ Shortage Crisis",
-      data: [
-        { label: "Annual Deaths", value: "500,000", color: "text-red-600" },
-        { label: "Donors per 100K", value: "0.26", color: "text-orange-600" },
-        { label: "Kidney Patients", value: "200,000+", color: "text-red-500" }
-      ]
-    },
-    {
-      title: "Success Rates",
-      data: [
-        { label: "Overall Success", value: "85-90%", color: "text-green-600" },
-        { label: "Kidney Success", value: "90-95%", color: "text-green-600" },
-        { label: "Corneal Success", value: "95%", color: "text-green-700" }
-      ]
-    },
-    {
-      title: "Economic Impact",
-      data: [
-        { label: "Kidney Cost", value: "₹5-7L", color: "text-blue-600" },
-        { label: "Liver Cost", value: "₹15-20L", color: "text-purple-600" },
-        { label: "Lives Saved/Year", value: "2,000+", color: "text-green-600" }
-      ]
-    }
-  ];
-
-  return (
-    <section className="py-12 bg-gradient-to-br from-blue-50 via-teal-50 to-green-50">
+  const statsData = [{
+    title: "Organ Shortage Crisis",
+    data: [{
+      label: "Annual Deaths",
+      value: "500,000",
+      color: "text-red-600"
+    }, {
+      label: "Donors per 100K",
+      value: "0.26",
+      color: "text-orange-600"
+    }, {
+      label: "Kidney Patients",
+      value: "200,000+",
+      color: "text-red-500"
+    }]
+  }, {
+    title: "Success Rates",
+    data: [{
+      label: "Overall Success",
+      value: "85-90%",
+      color: "text-green-600"
+    }, {
+      label: "Kidney Success",
+      value: "90-95%",
+      color: "text-green-600"
+    }, {
+      label: "Corneal Success",
+      value: "95%",
+      color: "text-green-700"
+    }]
+  }, {
+    title: "Economic Impact",
+    data: [{
+      label: "Kidney Cost",
+      value: "₹5-7L",
+      color: "text-blue-600"
+    }, {
+      label: "Liver Cost",
+      value: "₹15-20L",
+      color: "text-purple-600"
+    }, {
+      label: "Lives Saved/Year",
+      value: "2,000+",
+      color: "text-green-600"
+    }]
+  }];
+  return <section className="py-12 bg-gradient-to-br from-blue-50 via-teal-50 to-green-50">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent px-0 py-[7px]">
             About Organ Donation
           </h2>
           <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
@@ -286,56 +338,34 @@ const AboutOrganDonation: React.FC = () => {
                 
                 {/* Dots indicator */}
                 <div className="flex justify-center gap-2 mt-6">
-                  {myths.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentMythIndex(index)}
-                      className={`w-2 h-2 rounded-full transition-colors ${
-                        index === currentMythIndex ? 'bg-red-500' : 'bg-gray-300'
-                      }`}
-                    />
-                  ))}
+                  {myths.map((_, index) => <button key={index} onClick={() => setCurrentMythIndex(index)} className={`w-2 h-2 rounded-full transition-colors ${index === currentMythIndex ? 'bg-red-500' : 'bg-gray-300'}`} />)}
                 </div>
               </div>
 
               {/* Quick Myth Preview */}
               <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-6">
-                {myths.slice(0, 10).map((myth, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentMythIndex(index)}
-                    className={`p-3 rounded-lg text-xs text-left transition-colors border ${
-                      index === currentMythIndex 
-                        ? 'bg-red-100 border-red-300 text-red-800' 
-                        : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-50'
-                    }`}
-                  >
+                {myths.slice(0, 10).map((myth, index) => <button key={index} onClick={() => setCurrentMythIndex(index)} className={`p-3 rounded-lg text-xs text-left transition-colors border ${index === currentMythIndex ? 'bg-red-100 border-red-300 text-red-800' : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-50'}`}>
                     Myth {index + 1}: {myth.title.slice(0, 20)}...
-                  </button>
-                ))}
+                  </button>)}
               </div>
             </div>
           </TabsContent>
 
           <TabsContent value="statistics" className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              {statsData.map((section, index) => (
-                <Card key={index} className="bg-white shadow-lg border-0">
+              {statsData.map((section, index) => <Card key={index} className="bg-white shadow-lg border-0">
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg text-center">{section.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    {section.data.map((item, idx) => (
-                      <div key={idx} className="text-center">
+                    {section.data.map((item, idx) => <div key={idx} className="text-center">
                         <div className={`text-2xl font-bold ${item.color} mb-1`}>
                           {item.value}
                         </div>
                         <p className="text-sm text-gray-600">{item.label}</p>
-                      </div>
-                    ))}
+                      </div>)}
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
 
             {/* Wait Times Visualization */}
@@ -348,15 +378,13 @@ const AboutOrganDonation: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  {waitTimes.map((item, index) => (
-                    <div key={index} className="text-center bg-white rounded-xl p-4 shadow-sm">
+                  {waitTimes.map((item, index) => <div key={index} className="text-center bg-white rounded-xl p-4 shadow-sm">
                       <div className={`w-12 h-12 ${item.color} rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-lg`}>
                         {item.organ[0]}
                       </div>
                       <h5 className="font-semibold text-gray-800 mb-1">{item.organ}</h5>
                       <p className="text-gray-600 font-medium">{item.time}</p>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </CardContent>
             </Card>
@@ -420,13 +448,11 @@ const AboutOrganDonation: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                  {organTypes.map((organ, index) => (
-                    <div key={index} className="bg-white rounded-xl p-4 shadow-md text-center hover:shadow-lg transition-all hover:scale-105 border border-gray-100">
+                  {organTypes.map((organ, index) => <div key={index} className="bg-white rounded-xl p-4 shadow-md text-center hover:shadow-lg transition-all hover:scale-105 border border-gray-100">
                       <div className="text-3xl mb-2">{organ.icon}</div>
                       <h4 className="font-semibold text-gray-800 mb-1 text-sm">{organ.name}</h4>
                       <p className="text-xs text-gray-600">{organ.description}</p>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </CardContent>
             </Card>
@@ -447,8 +473,6 @@ const AboutOrganDonation: React.FC = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutOrganDonation;
