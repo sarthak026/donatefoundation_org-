@@ -603,7 +603,7 @@ const WhatWeDo: React.FC = () => {
                 Every small step counts in this journey of saving lives. Pledge to be an organ donor today 
                 and inspire others to follow. Together, we can change destinies and rewrite the future.
               </p>
-              <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full text-lg">
+              <Button onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')} className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full text-lg">
                 Pledge to Donate Now
               </Button>
             </div>

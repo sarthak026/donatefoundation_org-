@@ -32,7 +32,7 @@ const Donate: React.FC = () => {
               families, and save lives across India.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full px-8 py-3 text-lg font-semibold">
+              <Button onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')} size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full px-8 py-3 text-lg font-semibold">
                 <Heart className="h-5 w-5 mr-2" />
                 Pledge Your Organs
               </Button>
