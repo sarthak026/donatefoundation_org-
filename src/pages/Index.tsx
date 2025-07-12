@@ -8,7 +8,6 @@ import Programs from '../components/sections/Programs';
 import ImpactStories from '../components/sections/ImpactStories';
 import CallToAction from '../components/sections/CallToAction';
 import AboutOrganDonation from '../components/sections/AboutOrganDonation';
-import DonateButton from '../components/ui/DonateButton';
 
 const Index: React.FC = () => {
   return (
@@ -21,7 +20,6 @@ const Index: React.FC = () => {
       <ImpactStories />
       <News />
       <CallToAction />
-      <DonateButton />
     </div>
   );
 };
