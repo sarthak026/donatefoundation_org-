@@ -9,33 +9,20 @@ const Hero: React.FC = () => {
       {/* Main Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/lovable-uploads/c64c3ab2-a104-47fc-9613-24e5baeeacb7.png" 
-          alt="Children smiling"
+          src="/lovable-uploads/456a1ed2-7929-4a98-8606-2681fefdf3c9.png" 
+          alt="Children smiling together"
           className="w-full h-full object-cover"
         />
-        {/* Subtle dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
       </div>
-
-      {/* Secondary Image - positioned on right side */}
-      <div className="absolute top-20 right-10 w-80 h-80 rounded-2xl overflow-hidden opacity-90 shadow-2xl z-10 hidden lg:block">
-        <img 
-          src="/lovable-uploads/ae051478-e150-478c-aeb5-0ea9ae89102e.png" 
-          alt="Community support"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* Decorative Shape - Green Orange Gradient */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-br from-green-400/30 to-orange-400/30 rounded-full blur-3xl z-5"></div>
-      <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-gradient-to-tl from-orange-300/20 to-green-300/20 rounded-full blur-2xl z-5"></div>
 
       {/* Content Container */}
       <div className="container mx-auto px-6 relative z-20">
         <div className="max-w-4xl">
           {/* Small Tagline */}
-          <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full mb-8 shadow-lg">
-            <Heart className="h-4 w-4 text-red-500" />
+          <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full mb-8 shadow-sm">
+            <Heart className="h-4 w-4 text-secondary" />
             <span className="text-sm font-medium">MAKE AN IMPACT</span>
           </div>
 
@@ -54,7 +41,7 @@ const Hero: React.FC = () => {
           {/* CTA Button */}
           <Button 
             onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')} 
-            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-xl transform hover:scale-105 transition-all duration-300 border-0"
+            className="bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 border-0"
           >
             BECOME A DONOR TODAY
             <ExternalLink className="ml-2 h-5 w-5" />
@@ -62,8 +49,8 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white via-white/80 to-transparent z-10"></div>
+      {/* Bottom Wave Transition */}
+      <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white via-white/90 to-transparent z-10"></div>
     </section>
   );
 };
