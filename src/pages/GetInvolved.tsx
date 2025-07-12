@@ -31,7 +31,7 @@ const GetInvolved: React.FC = () => {
                 <Handshake className="h-5 w-5 mr-2" />
                 Become a Volunteer
               </Button>
-              <Button size="lg" className="text-white rounded-full px-8 py-3 text-lg font-semibold bg-slate-950 hover:bg-slate-800">
+              <Button size="lg" className="rounded-full px-8 py-3 text-lg font-semibold text-zinc-950 bg-slate-50">
                 <Target className="h-5 w-5 mr-2" />
                 Partner With Us
               </Button>
