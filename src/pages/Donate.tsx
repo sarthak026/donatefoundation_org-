@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import ContentContainer from '../components/common/ContentContainer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Heart, Building, Gift, Landmark, HelpCircle, ExternalLink } from 'lucide-react';
+import { Heart, Building, Gift, Landmark, HelpCircle, ExternalLink, HandHeart, Users2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -20,17 +20,71 @@ const Donate: React.FC = () => {
 
   return (
     <>
-      <div className="pt-24 bg-gradient-to-r from-secondary/10 to-primary/10">
+      {/* Hero Section with Impactful Donation Imagery */}
+      <div className="relative pt-24 pb-20 bg-gradient-to-br from-primary via-primary/90 to-secondary overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-secondary/95"></div>
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="/lovable-uploads/05135849-ef60-4f5f-a5d9-652674e0492b.png" 
+            alt="Community support and dialogue background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
         <ContentContainer>
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Support Our Mission</h1>
-            <p className="text-xl text-gray-700 mb-10">
+          <div className="relative z-10 max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+              <HandHeart className="h-4 w-4" />
+              <span className="font-medium">Every Contribution Counts</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-8 text-white">Support Our Mission</h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
               Your contribution helps us promote organ donation awareness, support donor 
               families, and save lives across India.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full px-8 py-3 text-lg font-semibold">
+                <Heart className="h-5 w-5 mr-2" />
+                Pledge Your Organs
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-full px-8 py-3 text-lg font-semibold">
+                <Users2 className="h-5 w-5 mr-2" />
+                Corporate Partnership
+              </Button>
+            </div>
           </div>
         </ContentContainer>
       </div>
+
+      {/* Impact Stats Section */}
+      <ContentContainer className="py-16 bg-gradient-to-r from-white to-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6">Your Impact in Numbers</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See how your support translates into real change and saved lives
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="text-center bg-white rounded-2xl p-6 shadow-lg">
+              <div className="text-3xl font-bold text-primary mb-2">1:8</div>
+              <p className="text-gray-600">Donor to Lives Saved Ratio</p>
+            </div>
+            <div className="text-center bg-white rounded-2xl p-6 shadow-lg">
+              <div className="text-3xl font-bold text-secondary mb-2">₹5,000</div>
+              <p className="text-gray-600">Sponsors One Workshop</p>
+            </div>
+            <div className="text-center bg-white rounded-2xl p-6 shadow-lg">
+              <div className="text-3xl font-bold text-primary mb-2">50+</div>
+              <p className="text-gray-600">Families Counseled Monthly</p>
+            </div>
+            <div className="text-center bg-white rounded-2xl p-6 shadow-lg">
+              <div className="text-3xl font-bold text-secondary mb-2">15</div>
+              <p className="text-gray-600">States We Operate In</p>
+            </div>
+          </div>
+        </div>
+      </ContentContainer>
 
       {/* Ways to Give Section */}
       <ContentContainer className="py-16">
