@@ -7,19 +7,13 @@ import { Users, Calendar, Heart, Flag, BadgeCheck, ChevronDown, FileText, Shield
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import DonateButton from '../components/ui/DonateButton';
-
 const GetInvolved: React.FC = () => {
-  return (
-    <>
+  return <>
       {/* Hero Section with Action CTAs */}
       <div className="relative pt-24 pb-20 bg-gradient-to-br from-secondary via-secondary/90 to-primary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 to-primary/95"></div>
         <div className="absolute inset-0 opacity-15">
-          <img 
-            src="/lovable-uploads/7f33df0a-fc8e-4ecb-ac01-2d158466dbec.png" 
-            alt="Team collaboration background" 
-            className="w-full h-full object-cover"
-          />
+          <img src="/lovable-uploads/7f33df0a-fc8e-4ecb-ac01-2d158466dbec.png" alt="Team collaboration background" className="w-full h-full object-cover" />
         </div>
         <ContentContainer>
           <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -37,7 +31,7 @@ const GetInvolved: React.FC = () => {
                 <Handshake className="h-5 w-5 mr-2" />
                 Become a Volunteer
               </Button>
-              <Button size="lg" className="bg-secondary text-white hover:bg-secondary/90 rounded-full px-8 py-3 text-lg font-semibold">
+              <Button size="lg" className="text-white rounded-full px-8 py-3 text-lg font-semibold bg-slate-950 hover:bg-slate-800">
                 <Target className="h-5 w-5 mr-2" />
                 Partner With Us
               </Button>
@@ -389,14 +383,12 @@ const GetInvolved: React.FC = () => {
             <div className="bg-gray-50 p-6 rounded-xl">
               <h4 className="text-xl font-semibold mb-4">Consent Process Workflow</h4>
               <div className="flex flex-wrap justify-center gap-4">
-                {['Initial Decision', 'Documentation', 'Family Discussion', 'Registration', 'Verification', 'Potential Donation'].map((step, index) => (
-                  <div key={index} className="bg-white p-3 rounded-lg shadow-sm border border-gray-200 text-center min-w-[120px]">
+                {['Initial Decision', 'Documentation', 'Family Discussion', 'Registration', 'Verification', 'Potential Donation'].map((step, index) => <div key={index} className="bg-white p-3 rounded-lg shadow-sm border border-gray-200 text-center min-w-[120px]">
                     <div className="bg-primary/10 text-primary font-semibold w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2">
                       {index + 1}
                     </div>
                     <span className="text-sm font-medium text-gray-700">{step}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -702,11 +694,7 @@ const GetInvolved: React.FC = () => {
           </div>
           
           <div className="bg-white rounded-xl shadow-md overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&auto=format&q=80" 
-              alt="Volunteer team at community event" 
-              className="w-full h-60 object-cover"
-            />
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&auto=format&q=80" alt="Volunteer team at community event" className="w-full h-60 object-cover" />
             <div className="p-6">
               <h3 className="text-2xl font-semibold mb-4">Apply to Volunteer</h3>
               
@@ -893,11 +881,7 @@ const GetInvolved: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="h-48 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&auto=format&q=80" 
-                  alt="Annual Charity Walk" 
-                  className="w-full h-full object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&auto=format&q=80" alt="Annual Charity Walk" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
@@ -915,11 +899,7 @@ const GetInvolved: React.FC = () => {
             
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="h-48 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=800&auto=format&q=80" 
-                  alt="Charity Golf Tournament" 
-                  className="w-full h-full object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=800&auto=format&q=80" alt="Charity Golf Tournament" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
@@ -945,8 +925,6 @@ const GetInvolved: React.FC = () => {
       </ContentContainer>
 
       <DonateButton />
-    </>
-  );
+    </>;
 };
-
 export default GetInvolved;
