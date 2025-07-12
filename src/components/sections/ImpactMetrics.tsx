@@ -31,30 +31,30 @@ const ImpactMetrics: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-8 bg-gray-50">
       <ContentContainer>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {metrics.map((metric, index) => {
             const IconComponent = metric.icon;
             return (
               <div 
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`${metric.bgColor} p-3 rounded-xl`}>
-                    <IconComponent className="h-6 w-6 text-white" />
+                <div className="flex items-start justify-between mb-3">
+                  <div className={`${metric.bgColor} p-2 rounded-lg`}>
+                    <IconComponent className="h-4 w-4 text-white" />
                   </div>
-                  <span className={`${metric.badgeColor} px-3 py-1 rounded-full text-xs font-medium`}>
+                  <span className={`${metric.badgeColor} px-2 py-1 rounded-full text-xs font-medium`}>
                     {metric.badge}
                   </span>
                 </div>
                 
-                <div className="text-4xl font-bold text-gray-900 mb-2">
+                <div className="text-2xl font-bold text-gray-900 mb-1">
                   {metric.number}
                 </div>
                 
-                <div className="text-gray-600 font-medium text-lg">
+                <div className="text-gray-600 font-medium text-sm">
                   {metric.label}
                 </div>
               </div>
