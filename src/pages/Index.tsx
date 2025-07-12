@@ -2,7 +2,7 @@
 import React from 'react';
 import Hero from '../components/sections/Hero';
 import Welcome from '../components/sections/Welcome';
-import Stats from '../components/sections/Stats';
+import ImpactMetrics from '../components/sections/ImpactMetrics';
 import News from '../components/sections/News';
 import Programs from '../components/sections/Programs';
 import ImpactStories from '../components/sections/ImpactStories';
@@ -14,8 +14,8 @@ const Index: React.FC = () => {
     <div className="min-h-screen">
       <Hero />
       <Welcome />
+      <ImpactMetrics />
       <AboutOrganDonation />
-      <Stats />
       <Programs />
       <ImpactStories />
       <News />
