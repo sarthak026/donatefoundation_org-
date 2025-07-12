@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link, index) => <NavLink key={index} to={link.path} className={({
           isActive
-        }) => `nav-link text-sm font-medium transition-all duration-300 hover:text-primary ${isActive ? 'text-primary font-semibold' : 'text-gray-700'}`} style={{
+        }) => `nav-link text-sm font-medium transition-all duration-300 hover:text-primary ${isActive ? 'text-primary font-semibold' : 'text-foreground'}`} style={{
           animationDelay: `${index * 0.1}s`
         }}>
               {link.text}
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
           <div className="container mx-auto px-4 py-6 flex flex-col space-y-4">
             {navLinks.map((link, index) => <NavLink key={index} to={link.path} className={({
             isActive
-          }) => `py-3 px-4 text-sm font-medium rounded-lg transition-all duration-300 transform hover:translate-x-2 ${isActive ? 'text-primary bg-primary/10 font-semibold' : 'text-gray-700 hover:bg-gray-50'}`} onClick={() => setIsMobileMenuOpen(false)} style={{
+          }) => `py-3 px-4 text-sm font-medium rounded-lg transition-all duration-300 transform hover:translate-x-2 ${isActive ? 'text-primary bg-primary/10 font-semibold' : 'text-foreground hover:bg-gray-50'}`} onClick={() => setIsMobileMenuOpen(false)} style={{
             animationDelay: `${index * 0.1}s`,
             animation: isMobileMenuOpen ? `slideInLeft 0.5s ease-out ${index * 0.1}s both` : 'none'
           }}>
