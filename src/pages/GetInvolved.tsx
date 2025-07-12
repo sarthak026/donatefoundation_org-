@@ -3,7 +3,7 @@ import ContentContainer from '../components/common/ContentContainer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Users, Calendar, Heart, Flag, BadgeCheck, ChevronDown, FileText, Shield, User, Globe, BookOpen, CheckCircle } from 'lucide-react';
+import { Users, Calendar, Heart, Flag, BadgeCheck, ChevronDown, FileText, Shield, User, Globe, BookOpen, CheckCircle, UserPlus, Handshake, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import DonateButton from '../components/ui/DonateButton';
@@ -11,17 +11,84 @@ import DonateButton from '../components/ui/DonateButton';
 const GetInvolved: React.FC = () => {
   return (
     <>
-      <div className="pt-24 bg-gradient-to-r from-secondary/5 to-primary/5">
+      {/* Hero Section with Action CTAs */}
+      <div className="relative pt-24 pb-20 bg-gradient-to-br from-secondary via-secondary/90 to-primary overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 to-primary/95"></div>
+        <div className="absolute inset-0 opacity-15">
+          <img 
+            src="/lovable-uploads/7f33df0a-fc8e-4ecb-ac01-2d158466dbec.png" 
+            alt="Team collaboration background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
         <ContentContainer>
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Get Involved</h1>
-            <p className="text-xl text-gray-700 mb-10">
+          <div className="relative z-10 max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+              <UserPlus className="h-4 w-4" />
+              <span className="font-medium">Join the Movement</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-8 text-white">Get Involved</h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
               Join our mission to save lives through organ donation awareness and advocacy. 
               Your time, skills, and passion can make a real difference.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full px-8 py-3 text-lg font-semibold">
+                <Handshake className="h-5 w-5 mr-2" />
+                Become a Volunteer
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-full px-8 py-3 text-lg font-semibold">
+                <Target className="h-5 w-5 mr-2" />
+                Partner With Us
+              </Button>
+            </div>
           </div>
         </ContentContainer>
       </div>
+
+      {/* Quick Action Cards */}
+      <ContentContainer className="py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-primary/10 p-4 rounded-full inline-flex mb-4 group-hover:bg-primary/20 transition-colors">
+              <UserPlus className="text-primary h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Become a Volunteer</h3>
+            <p className="text-gray-600 mb-4">
+              Join our passionate team spreading awareness in communities, hospitals, and schools.
+            </p>
+            <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors">
+              Start Volunteering
+            </Button>
+          </div>
+
+          <div className="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-secondary/10 p-4 rounded-full inline-flex mb-4 group-hover:bg-secondary/20 transition-colors">
+              <Handshake className="text-secondary h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Partner With Us</h3>
+            <p className="text-gray-600 mb-4">
+              Organizations and institutions can collaborate for greater impact and reach.
+            </p>
+            <Button variant="outline" className="w-full group-hover:bg-secondary group-hover:text-white transition-colors">
+              Explore Partnerships
+            </Button>
+          </div>
+
+          <div className="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div className="bg-primary/10 p-4 rounded-full inline-flex mb-4 group-hover:bg-primary/20 transition-colors">
+              <Target className="text-primary h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Advocate & Support</h3>
+            <p className="text-gray-600 mb-4">
+              Use your voice and platform to promote organ donation awareness in your network.
+            </p>
+            <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors">
+              Join Advocacy
+            </Button>
+          </div>
+        </div>
+      </ContentContainer>
 
       {/* How It Works Section */}
       <ContentContainer className="py-16">

@@ -10,63 +10,69 @@ import Autoplay from 'embla-carousel-autoplay';
 const Events: React.FC = () => {
   const [activeGallery, setActiveGallery] = useState<'images' | 'videos'>('images');
   
-  // Sample data for past events
+  // Authentic NGO event images
   const pastEventImages = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&auto=format&q=80",
-      alt: "Organ donation awareness rally",
-      caption: "Annual Awareness Rally 2024"
+      src: "/lovable-uploads/254d10a2-79a1-4365-9fb3-d9dd964afd0e.png",
+      alt: "Community awareness drive with youth engagement",
+      caption: "Youth Awareness Drive 2024"
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&auto=format&q=80",
-      alt: "Hospital donation drive",
-      caption: "Hospital Partnership Drive"
+      src: "/lovable-uploads/e0f53023-698d-432d-97c8-689af2f235de.png",
+      alt: "Educational workshop with community members",
+      caption: "Educational Workshop Series"
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&auto=format&q=80",
-      alt: "Student participation event",
-      caption: "Youth Ambassador Program"
+      src: "/lovable-uploads/f1ff8a96-c999-4319-aade-e4a5cee10edf.png",
+      alt: "Mission outreach and awareness campaign",
+      caption: "Mission Outreach Campaign"
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&q=80",
-      alt: "Community awareness event",
-      caption: "Community Outreach Program"
+      src: "/lovable-uploads/7f33df0a-fc8e-4ecb-ac01-2d158466dbec.png",
+      alt: "Team building and volunteer engagement",
+      caption: "Volunteer Team Building Event"
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&q=80",
-      alt: "Medical conference",
-      caption: "Medical Professional Conference"
+      src: "/lovable-uploads/05135849-ef60-4f5f-a5d9-652674e0492b.png",
+      alt: "One-on-one community dialogue sessions",
+      caption: "Community Dialogue Sessions"
+    },
+    {
+      id: 6,
+      src: "/lovable-uploads/2c805cd6-bd0d-4f2c-bfc8-1771623cf03e.png",
+      alt: "Building connections and awareness together",
+      caption: "Community Connection Building"
     }
   ];
 
   const pastEventVideos = [
     {
       id: 1,
-      thumbnail: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&auto=format&q=80",
-      title: "Awareness Rally Highlights",
+      thumbnail: "/lovable-uploads/254d10a2-79a1-4365-9fb3-d9dd964afd0e.png",
+      title: "Youth Awareness Campaign Highlights",
       duration: "3:45"
     },
     {
       id: 2,
-      thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&auto=format&q=80",
-      title: "Donor Stories Documentary",
+      thumbnail: "/lovable-uploads/e0f53023-698d-432d-97c8-689af2f235de.png",
+      title: "Educational Workshop Documentary",
       duration: "8:20"
     },
     {
       id: 3,
-      thumbnail: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&auto=format&q=80",
-      title: "Youth Program Overview",
+      thumbnail: "/lovable-uploads/f1ff8a96-c999-4319-aade-e4a5cee10edf.png",
+      title: "Mission Outreach Overview",
       duration: "5:15"
     },
     {
       id: 4,
-      thumbnail: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&q=80",
-      title: "Community Impact Stories",
+      thumbnail: "/lovable-uploads/7f33df0a-fc8e-4ecb-ac01-2d158466dbec.png",
+      title: "Volunteer Stories & Impact",
       duration: "6:30"
     }
   ];
