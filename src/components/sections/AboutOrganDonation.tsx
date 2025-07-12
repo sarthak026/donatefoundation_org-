@@ -78,7 +78,7 @@ const AboutOrganDonation: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-50 to-teal-50">
+    <section className="py-8 bg-gradient-to-r from-blue-50 to-teal-50">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

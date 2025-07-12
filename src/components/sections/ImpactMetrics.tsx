@@ -31,7 +31,7 @@ const ImpactMetrics: React.FC = () => {
   ];
 
   return (
-    <section className="py-8 bg-gray-50">
+    <section className="py-4 bg-gray-50">
       <ContentContainer>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {metrics.map((metric, index) => {
