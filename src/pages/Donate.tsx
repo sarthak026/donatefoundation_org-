@@ -1,24 +1,34 @@
+
 import React, { useState } from 'react';
 import ContentContainer from '../components/common/ContentContainer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Heart, Building, Gift, Landmark, HelpCircle, ExternalLink, HandHeart, Users2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 const Donate: React.FC = () => {
   const [donationAmount, setDonationAmount] = useState<number | string>(1000);
   const [isMonthly, setIsMonthly] = useState<boolean>(false);
+
   const handleCustomAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDonationAmount(e.target.value);
   };
+
   const selectAmount = (amount: number) => {
     setDonationAmount(amount);
   };
-  return <>
+
+  return (
+    <>
       {/* Hero Section with Impactful Donation Imagery */}
       <div className="relative pt-24 pb-20 bg-gradient-to-br from-primary via-primary/90 to-secondary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-secondary/95"></div>
         <div className="absolute inset-0 opacity-20">
-          <img src="/lovable-uploads/05135849-ef60-4f5f-a5d9-652674e0492b.png" alt="Community support and dialogue background" className="w-full h-full object-cover" />
+          <img 
+            src="/lovable-uploads/05135849-ef60-4f5f-a5d9-652674e0492b.png" 
+            alt="Community support and dialogue background" 
+            className="w-full h-full object-cover"
+          />
         </div>
         <ContentContainer>
           <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -36,7 +46,7 @@ const Donate: React.FC = () => {
                 <Heart className="h-5 w-5 mr-2" />
                 Pledge Your Organs
               </Button>
-              <Button size="lg" variant="outline" className="border-white hover:bg-white/10 rounded-full px-8 py-3 text-lg font-semibold text-slate-950">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-full px-8 py-3 text-lg font-semibold">
                 <Users2 className="h-5 w-5 mr-2" />
                 Corporate Partnership
               </Button>
@@ -135,7 +145,10 @@ const Donate: React.FC = () => {
                     </ul>
                   </div>
                   
-                  <Button onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')} className="w-full flex items-center gap-2">
+                  <Button 
+                    onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')}
+                    className="w-full flex items-center gap-2"
+                  >
                     <Heart className="h-5 w-5" />
                     Pledge Your Organ
                     <ExternalLink className="h-4 w-4" />
@@ -420,6 +433,8 @@ const Donate: React.FC = () => {
           </Accordion>
         </div>
       </ContentContainer>
-    </>;
+    </>
+  );
 };
+
 export default Donate;
