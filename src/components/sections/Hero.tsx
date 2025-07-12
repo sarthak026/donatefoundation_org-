@@ -6,21 +6,21 @@ import { Heart, ExternalLink } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Clean Background Image */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/lovable-uploads/2ebcde51-1f8b-49af-9753-58ddffaea64c.png" 
+          src="/lovable-uploads/cdc3ca31-bf3c-443a-9932-0113187946cd.png" 
           alt="Donate Foundation community group"
           className="w-full h-full object-cover"
         />
-        {/* Soft gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/60"></div>
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900/70"></div>
       </div>
 
-      {/* Content Container - Centered */}
+      {/* Content */}
       <div className="container mx-auto px-6 relative z-20 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Small Tagline */}
+          {/* Tagline */}
           <div className="inline-flex items-center gap-2 bg-white/95 backdrop-blur-sm text-primary px-4 py-2 rounded-full mb-8 shadow-lg">
             <Heart className="h-4 w-4 text-secondary" />
             <span className="text-sm font-medium">MAKE AN IMPACT</span>
