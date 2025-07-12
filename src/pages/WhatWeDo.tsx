@@ -9,11 +9,25 @@ import DonateButton from '../components/ui/DonateButton';
 
 const WhatWeDo: React.FC = () => {
   return <>
-      <div className="pt-24 bg-gradient-to-r from-primary/5 to-secondary/5">
-        <ContentContainer>
+      {/* Hero Section with Background */}
+      <div className="relative pt-24 pb-16 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/lovable-uploads/f1ff8a96-c999-4319-aade-e4a5cee10edf.png" 
+            alt="Community working together"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-secondary/70"></div>
+        </div>
+        
+        <ContentContainer className="relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 animate-fade-in">What We Do</h1>
-            <p className="text-xl text-gray-700 mb-10 animate-fade-in" style={{animationDelay: '0.2s'}}>
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-8 shadow-sm">
+              <Heart className="h-4 w-4" />
+              <span className="text-sm font-medium">OUR MISSION</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white drop-shadow-lg animate-fade-in">What We Do</h1>
+            <p className="text-xl text-white/95 mb-10 animate-fade-in drop-shadow-md" style={{animationDelay: '0.2s'}}>
               Our mission is to create a culture where organ donation is embraced as a fundamental 
               human value, saving thousands of lives each year through education, 
               support, and community action.
