@@ -27,14 +27,14 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-8 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
             <span className="block">Bridging Communities.</span>
             <span className="block">Saving Lives.</span>
             <span className="block">Transforming Futures.</span>
           </h1>
 
           {/* Supporting Text */}
-          <p className="text-xl md:text-2xl text-gray-700 mb-12 max-w-2xl leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl leading-relaxed">
             We seek out world changers and difference makers around the globe, and equip them to fulfill their unique purpose through organ donation awareness.
           </p>
 
