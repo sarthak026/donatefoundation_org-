@@ -11,25 +11,11 @@ import PastEvents from '../components/sections/PastEvents';
 const Resources: React.FC = () => {
   return (
     <>
-      {/* Hero Section with Background */}
-      <div className="relative pt-24 pb-16 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/lovable-uploads/e0f53023-698d-432d-97c8-689af2f235de.png" 
-            alt="Educational resources and materials"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-secondary/70 to-primary/75"></div>
-        </div>
-        
-        <ContentContainer className="relative z-10">
+      <div className="pt-24 bg-gradient-to-r from-primary/5 to-secondary/5">
+        <ContentContainer>
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-8 shadow-sm">
-              <FileText className="h-4 w-4" />
-              <span className="text-sm font-medium">KNOWLEDGE CENTER</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white drop-shadow-lg">Resources</h1>
-            <p className="text-xl text-white/95 mb-10 drop-shadow-md">
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Resources</h1>
+            <p className="text-xl text-gray-700 mb-10">
               Access comprehensive information, educational materials, events, and frequently asked questions 
               about organ donation to make informed decisions and support our mission.
             </p>

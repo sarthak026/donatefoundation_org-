@@ -2,31 +2,17 @@
 import React from 'react';
 import ContentContainer from '../components/common/ContentContainer';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin, Youtube, MessageCircle, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
 import DonateButton from '../components/ui/DonateButton';
 
 const Contact: React.FC = () => {
   return (
     <>
-      {/* Hero Section with Background */}
-      <div className="relative pt-24 pb-16 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/lovable-uploads/7f33df0a-fc8e-4ecb-ac01-2d158466dbec.png" 
-            alt="Healthcare professionals and community"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-secondary/75 to-primary/80"></div>
-        </div>
-        
-        <ContentContainer className="relative z-10">
+      <div className="pt-24 bg-gradient-to-r from-primary/5 to-secondary/5">
+        <ContentContainer>
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-8 shadow-sm">
-              <MessageCircle className="h-4 w-4" />
-              <span className="text-sm font-medium">GET IN TOUCH</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white drop-shadow-lg">Contact Us</h1>
-            <p className="text-xl text-white/95 mb-10 drop-shadow-md">
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Contact Us</h1>
+            <p className="text-xl text-gray-700 mb-10">
               Have questions about organ donation or our foundation? Reach out to us. 
               We're here to help and provide information.
             </p>
@@ -110,11 +96,11 @@ const Contact: React.FC = () => {
             <div className="bg-white shadow-sm rounded-xl p-6 border border-gray-100 mb-8">
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-gradient-to-r from-primary to-secondary p-3 rounded-full mr-4">
-                    <Mail className="h-5 w-5 text-white" />
+                  <div className="bg-primary/10 p-2 rounded-full mr-4">
+                    <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1 text-gray-800">Email Us</h3>
+                    <h3 className="font-semibold mb-1">Email Us</h3>
                     <p className="text-gray-700 mb-1">General Inquiries: info@donatelife.org</p>
                     <p className="text-gray-700 mb-1">Media Inquiries: media@donatelife.org</p>
                     <p className="text-gray-700">Partnerships: partners@donatelife.org</p>
@@ -122,11 +108,11 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-gradient-to-r from-secondary to-primary p-3 rounded-full mr-4">
-                    <Phone className="h-5 w-5 text-white" />
+                  <div className="bg-primary/10 p-2 rounded-full mr-4">
+                    <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1 text-gray-800">Call Us</h3>
+                    <h3 className="font-semibold mb-1">Call Us</h3>
                     <p className="text-gray-700 mb-1">Helpline: +91-XXX-XXX-XXXX</p>
                     <p className="text-gray-700">Office: +91-XXX-XXX-XXXX</p>
                     <p className="text-sm text-gray-500 mt-1">Monday to Friday, 9:00 AM - 5:00 PM</p>
@@ -134,11 +120,11 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-gradient-to-r from-primary to-secondary p-3 rounded-full mr-4">
-                    <MapPin className="h-5 w-5 text-white" />
+                  <div className="bg-primary/10 p-2 rounded-full mr-4">
+                    <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1 text-gray-800">Visit Us</h3>
+                    <h3 className="font-semibold mb-1">Visit Us</h3>
                     <p className="text-gray-700 mb-1">DonateLife Foundation</p>
                     <p className="text-gray-700 mb-1">123 Hospital Road, Andheri East</p>
                     <p className="text-gray-700">Mumbai, Maharashtra 400069</p>
