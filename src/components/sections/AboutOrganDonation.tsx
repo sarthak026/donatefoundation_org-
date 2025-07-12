@@ -1,9 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Heart, Users, AlertTriangle, CheckCircle, Clock, Activity, TrendingUp, MapPin, IndianRupee } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Badge } from '@/components/ui/badge';
+import { Heart, Users, AlertTriangle, CheckCircle, Clock, Activity, TrendingUp, MapPin, IndianRupee, ChevronLeft, ChevronRight, BarChart3, Target, Users2 } from 'lucide-react';
 
 const AboutOrganDonation: React.FC = () => {
   const organTypes = [
@@ -77,274 +79,369 @@ const AboutOrganDonation: React.FC = () => {
     { organ: 'Corneal', rate: '95%', color: 'text-green-700' }
   ];
 
+  const [currentMythIndex, setCurrentMythIndex] = useState(0);
+  const [currentStatIndex, setCurrentStatIndex] = useState(0);
+
+  const nextMyth = () => {
+    setCurrentMythIndex((prev) => (prev + 1) % myths.length);
+  };
+
+  const prevMyth = () => {
+    setCurrentMythIndex((prev) => (prev - 1 + myths.length) % myths.length);
+  };
+
+  const statsData = [
+    {
+      title: "Organ Shortage Crisis",
+      data: [
+        { label: "Annual Deaths", value: "500,000", color: "text-red-600" },
+        { label: "Donors per 100K", value: "0.26", color: "text-orange-600" },
+        { label: "Kidney Patients", value: "200,000+", color: "text-red-500" }
+      ]
+    },
+    {
+      title: "Success Rates",
+      data: [
+        { label: "Overall Success", value: "85-90%", color: "text-green-600" },
+        { label: "Kidney Success", value: "90-95%", color: "text-green-600" },
+        { label: "Corneal Success", value: "95%", color: "text-green-700" }
+      ]
+    },
+    {
+      title: "Economic Impact",
+      data: [
+        { label: "Kidney Cost", value: "₹5-7L", color: "text-blue-600" },
+        { label: "Liver Cost", value: "₹15-20L", color: "text-purple-600" },
+        { label: "Lives Saved/Year", value: "2,000+", color: "text-green-600" }
+      ]
+    }
+  ];
+
   return (
-    <section className="py-8 bg-gradient-to-r from-blue-50 to-teal-50">
+    <section className="py-12 bg-gradient-to-br from-blue-50 via-teal-50 to-green-50">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-gray-800">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
             About Organ Donation
           </h2>
-          <p className="text-xl text-gray-700 mb-8">
-            Understanding Organ Donation: A Comprehensive Guide
+          <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            Understanding Organ Donation: A Comprehensive Guide to Saving Lives
           </p>
         </div>
 
-        {/* What is Organ Donation */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-8 mb-12 border border-blue-100">
-            <h3 className="text-3xl font-display font-semibold mb-6 text-center text-gray-800">
-              What is Organ Donation?
-            </h3>
-            <p className="text-lg text-gray-700 text-center leading-relaxed mb-8">
-              Organ donation is a profound act of human compassion—a gift of life that transcends personal boundaries. 
-              It involves the selfless act of donating healthy organs and tissues to individuals facing life-threatening 
-              medical conditions, offering hope, healing, and a second chance at life.
-            </p>
-            <div className="text-center">
-              <Button size="lg" className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-8 py-3 text-lg">
-                <Heart className="h-5 w-5 mr-2" />
-                Join the Movement
-              </Button>
+        {/* Compact Overview Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <Card className="bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 shadow-xl">
+            <CardContent className="p-6 text-center">
+              <Heart className="h-12 w-12 mx-auto mb-4 opacity-90" />
+              <h3 className="text-xl font-bold mb-2">Gift of Life</h3>
+              <p className="text-blue-100">One donor can save up to 8 lives</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-gradient-to-r from-teal-500 to-teal-600 text-white border-0 shadow-xl">
+            <CardContent className="p-6 text-center">
+              <Users2 className="h-12 w-12 mx-auto mb-4 opacity-90" />
+              <h3 className="text-xl font-bold mb-2">Lives Waiting</h3>
+              <p className="text-teal-100">500K people need transplants</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-gradient-to-r from-green-500 to-green-600 text-white border-0 shadow-xl">
+            <CardContent className="p-6 text-center">
+              <Target className="h-12 w-12 mx-auto mb-4 opacity-90" />
+              <h3 className="text-xl font-bold mb-2">Success Rate</h3>
+              <p className="text-green-100">85-95% success in transplants</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Main Content Tabs */}
+        <Tabs defaultValue="overview" className="w-full">
+          <TabsList className="grid w-full grid-cols-4 mb-8 bg-white shadow-lg rounded-xl p-1">
+            <TabsTrigger value="overview" className="rounded-lg">Overview</TabsTrigger>
+            <TabsTrigger value="myths" className="rounded-lg">Myths & Facts</TabsTrigger>
+            <TabsTrigger value="statistics" className="rounded-lg">Statistics</TabsTrigger>
+            <TabsTrigger value="organs" className="rounded-lg">Organ Types</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="overview" className="space-y-8">
+            {/* What is Organ Donation */}
+            <Card className="bg-gradient-to-r from-blue-50 to-teal-50 border-blue-200 shadow-lg">
+              <CardContent className="p-8">
+                <h3 className="text-3xl font-display font-semibold mb-6 text-center text-gray-800">
+                  What is Organ Donation?
+                </h3>
+                <p className="text-lg text-gray-700 text-center leading-relaxed mb-8 max-w-4xl mx-auto">
+                  Organ donation is a profound act of human compassion—a gift of life that transcends personal boundaries. 
+                  It involves the selfless act of donating healthy organs and tissues to individuals facing life-threatening 
+                  medical conditions, offering hope, healing, and a second chance at life.
+                </p>
+                <div className="text-center">
+                  <Button size="lg" className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-8 py-3 text-lg shadow-lg">
+                    <Heart className="h-5 w-5 mr-2" />
+                    Join the Movement
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Types of Donation */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card className="rounded-2xl shadow-xl border-0 bg-white overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-green-500 to-emerald-500 text-white">
+                  <CardTitle className="text-2xl flex items-center gap-3">
+                    <Activity className="h-8 w-8" />
+                    Living Donation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-6">
+                  <ul className="space-y-3 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      Donation of kidney or partial liver
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      Living donors can save lives while maintaining their own health
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      Rigorous medical and psychological screening
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="rounded-2xl shadow-xl border-0 bg-white overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white">
+                  <CardTitle className="text-2xl flex items-center gap-3">
+                    <Heart className="h-8 w-8" />
+                    Deceased Donation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-6">
+                  <ul className="space-y-3 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                      Organs donated after brain death or cardiac death
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                      Multiple organs can be donated from a single donor
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                      Coordinated through national organ networks
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
-          </div>
-        </div>
+          </TabsContent>
 
-        {/* Types of Organ Donation */}
-        <div className="mb-16">
-          <h3 className="text-3xl md:text-4xl font-display font-semibold mb-12 text-center text-gray-800">
-            Types of Organ Donation
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card className="rounded-2xl shadow-lg border-0 bg-white">
-              <CardHeader className="bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-t-2xl">
-                <CardTitle className="text-2xl flex items-center gap-3">
-                  <Activity className="h-8 w-8" />
-                  Living Donation
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6">
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    Donation of kidney or partial liver
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    Living donors can save lives while maintaining their own health
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    Typically involves family members or close friends
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    Rigorous medical and psychological screening
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-2xl shadow-lg border-0 bg-white">
-              <CardHeader className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-t-2xl">
-                <CardTitle className="text-2xl flex items-center gap-3">
-                  <Heart className="h-8 w-8" />
-                  Deceased Donation
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-6">
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
-                    Organs donated after brain death or cardiac death
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
-                    Multiple organs can be donated from a single donor
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
-                    Coordinated through hospital and national organ donation networks
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* Organs That Can Be Donated */}
-        <div className="mb-16">
-          <h3 className="text-3xl md:text-4xl font-display font-semibold mb-12 text-center text-gray-800">
-            Organs That Can Be Donated
-          </h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-            {organTypes.map((organ, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg text-center hover:shadow-xl transition-shadow border border-gray-100">
-                <div className="text-4xl mb-3">{organ.icon}</div>
-                <h4 className="font-semibold text-gray-800 mb-2">{organ.name}</h4>
-                <p className="text-sm text-gray-600">{organ.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Myths vs Facts */}
-        <div className="bg-gray-50 rounded-2xl p-8 mb-16">
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-display font-semibold mb-6 text-center text-gray-800">
-              Myths vs. Facts: Demystifying Organ Donation
-            </h3>
-            <p className="text-xl text-gray-700 mb-8 text-center">
-              10 Critical Myths About Organ Donation in India
-            </p>
-            
-            <div className="bg-orange-50 border border-orange-200 rounded-2xl p-6 mb-8">
-              <p className="text-lg text-gray-700 text-center">
-                The landscape of organ donation is often clouded by misconceptions that prevent potential donors from making life-changing decisions. Understanding these myths is crucial to breaking down barriers and saving lives.
+          <TabsContent value="myths" className="space-y-6">
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-8 border border-orange-200">
+              <h3 className="text-3xl font-display font-semibold mb-4 text-center text-gray-800">
+                Myths vs. Facts: Demystifying Organ Donation
+              </h3>
+              <p className="text-lg text-gray-700 mb-6 text-center">
+                10 Critical Myths About Organ Donation in India
               </p>
-            </div>
+              
+              <div className="bg-orange-100/70 border border-orange-300 rounded-xl p-4 mb-8">
+                <p className="text-gray-700 text-center">
+                  The landscape of organ donation is often clouded by misconceptions that prevent potential donors from making life-changing decisions.
+                </p>
+              </div>
 
-            <Accordion type="single" collapsible className="space-y-4">
-              {myths.map((myth, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-2xl shadow-sm border border-gray-100 px-6">
-                  <AccordionTrigger className="text-left hover:no-underline py-6">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-red-100 text-red-600 rounded-full p-2 flex-shrink-0">
-                        <AlertTriangle className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <span className="font-semibold text-gray-800">Myth {index + 1}:</span>
-                        <span className="ml-2 text-gray-700">{myth.title}</span>
-                      </div>
+              {/* Myth Carousel */}
+              <div className="relative bg-white rounded-2xl p-8 shadow-lg">
+                <div className="flex items-center justify-between mb-4">
+                  <Button variant="outline" size="sm" onClick={prevMyth} className="rounded-full">
+                    <ChevronLeft className="h-4 w-4" />
+                  </Button>
+                  <Badge variant="secondary" className="text-sm">
+                    Myth {currentMythIndex + 1} of {myths.length}
+                  </Badge>
+                  <Button variant="outline" size="sm" onClick={nextMyth} className="rounded-full">
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                </div>
+                
+                <div className="text-center min-h-[200px] flex flex-col justify-center">
+                  <div className="flex items-center justify-center gap-3 mb-4">
+                    <div className="bg-red-100 text-red-600 rounded-full p-3">
+                      <AlertTriangle className="h-6 w-6" />
                     </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-6 pl-16 text-gray-700 leading-relaxed">
-                    {myth.content}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-
-        {/* Organ Shortage Statistics */}
-        <div className="mb-16">
-          <h3 className="text-3xl md:text-4xl font-display font-semibold mb-12 text-center text-gray-800">
-            Organ Shortage: A National Challenge
-          </h3>
-          
-          <div className="bg-red-50 border border-red-200 rounded-2xl p-8 mb-8">
-            <h4 className="text-xl font-semibold mb-6 text-center text-red-700">The organ shortage in India is alarming:</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-red-600 mb-2">500,000</div>
-                <p className="text-gray-700">People die annually waiting for organ transplants</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-red-600 mb-2">0.26</div>
-                <p className="text-gray-700">Organ donors per 100,000 people</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-red-600 mb-2">200,000+</div>
-                <p className="text-gray-700">Patients requiring kidney transplantation</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Wait Times */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-            <h4 className="text-2xl font-display font-semibold mb-6 text-center text-gray-800 flex items-center justify-center gap-2">
-              <Clock className="h-6 w-6 text-orange-500" />
-              Average Wait Time for Organ Transplant
-            </h4>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {waitTimes.map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className={`w-16 h-16 ${item.color} rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold`}>
-                    {item.organ[0]}
+                    <h4 className="text-xl font-semibold text-gray-800">
+                      {myths[currentMythIndex].title}
+                    </h4>
                   </div>
-                  <h5 className="font-semibold text-gray-800">{item.organ}</h5>
-                  <p className="text-gray-600">{item.time}</p>
+                  <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                    {myths[currentMythIndex].content}
+                  </p>
                 </div>
+                
+                {/* Dots indicator */}
+                <div className="flex justify-center gap-2 mt-6">
+                  {myths.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentMythIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-colors ${
+                        index === currentMythIndex ? 'bg-red-500' : 'bg-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Quick Myth Preview */}
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-6">
+                {myths.slice(0, 10).map((myth, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentMythIndex(index)}
+                    className={`p-3 rounded-lg text-xs text-left transition-colors border ${
+                      index === currentMythIndex 
+                        ? 'bg-red-100 border-red-300 text-red-800' 
+                        : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    Myth {index + 1}: {myth.title.slice(0, 20)}...
+                  </button>
+                ))}
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="statistics" className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              {statsData.map((section, index) => (
+                <Card key={index} className="bg-white shadow-lg border-0">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg text-center">{section.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {section.data.map((item, idx) => (
+                      <div key={idx} className="text-center">
+                        <div className={`text-2xl font-bold ${item.color} mb-1`}>
+                          {item.value}
+                        </div>
+                        <p className="text-sm text-gray-600">{item.label}</p>
+                      </div>
+                    ))}
+                  </CardContent>
+                </Card>
               ))}
             </div>
-          </div>
 
-          {/* Success Rates */}
-          <div className="bg-green-50 border border-green-200 rounded-2xl p-8 mb-8">
-            <h4 className="text-2xl font-display font-semibold mb-6 text-center text-gray-800 flex items-center justify-center gap-2">
-              <TrendingUp className="h-6 w-6 text-green-500" />
-              Success Rate of Organ Transplantation
-            </h4>
-            <p className="text-center text-gray-700 mb-6">
-              Organ transplantation in India has shown remarkable medical progress:
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {successRates.map((item, index) => (
-                <div key={index} className="text-center bg-white rounded-xl p-4 shadow-sm">
-                  <h5 className="font-semibold text-gray-800 mb-1">{item.organ}</h5>
-                  <p className={`text-2xl font-bold ${item.color}`}>{item.rate}</p>
+            {/* Wait Times Visualization */}
+            <Card className="bg-gradient-to-r from-orange-50 to-red-50 border-orange-200">
+              <CardHeader>
+                <CardTitle className="text-center flex items-center justify-center gap-2">
+                  <Clock className="h-6 w-6 text-orange-500" />
+                  Average Wait Times for Organ Transplant
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {waitTimes.map((item, index) => (
+                    <div key={index} className="text-center bg-white rounded-xl p-4 shadow-sm">
+                      <div className={`w-12 h-12 ${item.color} rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-lg`}>
+                        {item.organ[0]}
+                      </div>
+                      <h5 className="font-semibold text-gray-800 mb-1">{item.organ}</h5>
+                      <p className="text-gray-600 font-medium">{item.time}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
+              </CardContent>
+            </Card>
 
-          {/* State-wise Performance & Economic Impact */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h4 className="text-xl font-semibold mb-4 text-blue-600 flex items-center gap-2">
-                <MapPin className="h-5 w-5" />
-                State-wise Performance
-              </h4>
-              <ul className="space-y-3">
-                <li className="flex justify-between items-center">
-                  <span>Maharashtra</span>
-                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">35%</span>
-                </li>
-                <li className="flex justify-between items-center">
-                  <span>Karnataka & Tamil Nadu</span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Strong</span>
-                </li>
-                <li className="flex justify-between items-center">
-                  <span>Northern States</span>
-                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Lower rates</span>
-                </li>
-              </ul>
+            {/* State Performance & Economic Impact */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="bg-white shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-blue-600">
+                    <MapPin className="h-5 w-5" />
+                    State-wise Performance
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span>Maharashtra</span>
+                    <Badge className="bg-green-100 text-green-800">35%</Badge>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Karnataka & Tamil Nadu</span>
+                    <Badge className="bg-blue-100 text-blue-800">Strong</Badge>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Northern States</span>
+                    <Badge className="bg-orange-100 text-orange-800">Lower rates</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-purple-600">
+                    <IndianRupee className="h-5 w-5" />
+                    Economic Impact
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span>Kidney transplant</span>
+                    <span className="font-medium text-blue-600">₹5-7 lakhs</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Liver transplant</span>
+                    <span className="font-medium text-purple-600">₹15-20 lakhs</span>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Government initiatives working to reduce barriers
+                  </p>
+                </CardContent>
+              </Card>
             </div>
-            
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h4 className="text-xl font-semibold mb-4 text-purple-600 flex items-center gap-2">
-                <IndianRupee className="h-5 w-5" />
-                Economic Impact
-              </h4>
-              <ul className="space-y-3">
-                <li className="flex justify-between items-center">
-                  <span>Kidney transplant</span>
-                  <span className="font-medium">₹5-7 lakhs</span>
-                </li>
-                <li className="flex justify-between items-center">
-                  <span>Liver transplant</span>
-                  <span className="font-medium">₹15-20 lakhs</span>
-                </li>
-                <li className="text-sm text-gray-600 mt-2">
-                  Government initiatives working to reduce barriers
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+          </TabsContent>
+
+          <TabsContent value="organs" className="space-y-6">
+            <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
+              <CardHeader>
+                <CardTitle className="text-center text-2xl">Organs That Can Be Donated</CardTitle>
+                <CardDescription className="text-center text-lg">
+                  Multiple organs and tissues can save and enhance many lives
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {organTypes.map((organ, index) => (
+                    <div key={index} className="bg-white rounded-xl p-4 shadow-md text-center hover:shadow-lg transition-all hover:scale-105 border border-gray-100">
+                      <div className="text-3xl mb-2">{organ.icon}</div>
+                      <h4 className="font-semibold text-gray-800 mb-1 text-sm">{organ.name}</h4>
+                      <p className="text-xs text-gray-600">{organ.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
 
         {/* Final CTA */}
-        <div className="text-center bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-2xl p-8">
+        <div className="text-center bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-2xl p-8 mt-12 shadow-2xl">
           <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Your Decision Matters
           </h3>
-          <p className="text-xl mb-6 opacity-90">
+          <p className="text-xl mb-6 opacity-90 max-w-2xl mx-auto">
             Your decision to donate can be the greatest gift of life. Become a donor, become a hope.
           </p>
-          <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 rounded-full px-8 py-3 text-lg font-semibold">
+          <Button onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')} size="lg" className="bg-white text-orange-600 hover:bg-gray-100 rounded-full px-8 py-3 text-lg font-semibold shadow-lg">
             <Heart className="h-6 w-6 mr-2" />
             Pledge to Save Lives
           </Button>
