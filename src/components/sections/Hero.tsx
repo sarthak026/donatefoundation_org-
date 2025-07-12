@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart, ExternalLink } from 'lucide-react';
-
 const Hero: React.FC = () => {
-  return (
-    <section className="bg-background py-16 lg:py-24">
+  return <section className="py-16 lg:py-24 bg-green-100">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -29,10 +26,7 @@ const Hero: React.FC = () => {
             </p>
 
             {/* CTA Button */}
-            <Button 
-              onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')} 
-              className="bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 border-0"
-            >
+            <Button onClick={() => window.open('https://www.mohanfoundation.org/donorcard.asp', '_blank')} className="bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 border-0">
               BECOME A DONOR TODAY
               <ExternalLink className="ml-2 h-5 w-5" />
             </Button>
@@ -40,16 +34,10 @@ const Hero: React.FC = () => {
 
           {/* Right Image */}
           <div className="relative">
-            <img 
-              src="/lovable-uploads/cdc3ca31-bf3c-443a-9932-0113187946cd.png" 
-              alt="Donate Foundation community group"
-              className="w-full h-auto rounded-lg shadow-xl"
-            />
+            <img src="/lovable-uploads/cdc3ca31-bf3c-443a-9932-0113187946cd.png" alt="Donate Foundation community group" className="w-full h-auto rounded-lg shadow-xl" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
