@@ -56,9 +56,12 @@ const Donate: React.FC = () => {
       </div>
 
       {/* Impact Stats Section */}
-      <ContentContainer className="py-16 bg-gradient-to-r from-white to-gray-50">
+      <ContentContainer className="py-16 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
+            <div className="bg-primary/10 p-4 rounded-full inline-flex mb-6">
+              <Heart className="text-primary h-6 w-6" />
+            </div>
             <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6">Your Impact in Numbers</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               See how your support translates into real change and saved lives
@@ -66,19 +69,31 @@ const Donate: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center bg-white rounded-2xl p-6 shadow-lg">
+            <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="bg-primary/10 p-4 rounded-full inline-flex mb-4 group-hover:bg-primary/20 transition-colors">
+                <Heart className="text-primary h-6 w-6" />
+              </div>
               <div className="text-3xl font-bold text-primary mb-2">1:8</div>
               <p className="text-gray-600">Donor to Lives Saved Ratio</p>
             </div>
-            <div className="text-center bg-white rounded-2xl p-6 shadow-lg">
+            <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="bg-secondary/10 p-4 rounded-full inline-flex mb-4 group-hover:bg-secondary/20 transition-colors">
+                <Building className="text-secondary h-6 w-6" />
+              </div>
               <div className="text-3xl font-bold text-secondary mb-2">₹5,000</div>
               <p className="text-gray-600">Sponsors One Workshop</p>
             </div>
-            <div className="text-center bg-white rounded-2xl p-6 shadow-lg">
+            <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="bg-primary/10 p-4 rounded-full inline-flex mb-4 group-hover:bg-primary/20 transition-colors">
+                <Users2 className="text-primary h-6 w-6" />
+              </div>
               <div className="text-3xl font-bold text-primary mb-2">50+</div>
               <p className="text-gray-600">Families Counseled Monthly</p>
             </div>
-            <div className="text-center bg-white rounded-2xl p-6 shadow-lg">
+            <div className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <div className="bg-secondary/10 p-4 rounded-full inline-flex mb-4 group-hover:bg-secondary/20 transition-colors">
+                <Landmark className="text-secondary h-6 w-6" />
+              </div>
               <div className="text-3xl font-bold text-secondary mb-2">15</div>
               <p className="text-gray-600">States We Operate In</p>
             </div>
@@ -87,9 +102,17 @@ const Donate: React.FC = () => {
       </ContentContainer>
 
       {/* Ways to Give Section */}
-      <ContentContainer className="py-16">
+      <ContentContainer className="py-16 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold mb-10 text-center">Ways to Give</h2>
+          <div className="text-center mb-12">
+            <div className="bg-primary/10 p-4 rounded-full inline-flex mb-6">
+              <Gift className="text-primary h-6 w-6" />
+            </div>
+            <h2 className="text-3xl font-display font-semibold mb-6">Ways to Give</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Choose the giving method that works best for you and your organization
+            </p>
+          </div>
           
           <Tabs defaultValue="organ" className="w-full">
             <TabsList className="grid grid-cols-1 md:grid-cols-3 mb-8">
@@ -243,8 +266,16 @@ const Donate: React.FC = () => {
       </ContentContainer>
 
       {/* Sponsorship Tiers */}
-      <ContentContainer className="bg-gray-50 py-16">
-        <h2 className="text-3xl font-display font-semibold mb-10 text-center">Sponsorship Opportunities</h2>
+      <ContentContainer className="bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 py-16">
+        <div className="text-center mb-12">
+          <div className="bg-primary/10 p-4 rounded-full inline-flex mb-6">
+            <Landmark className="text-primary h-6 w-6" />
+          </div>
+          <h2 className="text-3xl font-display font-semibold mb-6">Sponsorship Opportunities</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Partner with us and make a lasting impact through structured sponsorship programs
+          </p>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">

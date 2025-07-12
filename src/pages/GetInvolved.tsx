@@ -37,7 +37,7 @@ const GetInvolved: React.FC = () => {
                 <Handshake className="h-5 w-5 mr-2" />
                 Become a Volunteer
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-full px-8 py-3 text-lg font-semibold">
+              <Button size="lg" className="bg-secondary text-white hover:bg-secondary/90 rounded-full px-8 py-3 text-lg font-semibold">
                 <Target className="h-5 w-5 mr-2" />
                 Partner With Us
               </Button>
@@ -47,7 +47,13 @@ const GetInvolved: React.FC = () => {
       </div>
 
       {/* Quick Action Cards */}
-      <ContentContainer className="py-16">
+      <ContentContainer className="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-display font-semibold mb-4">Join Our Community</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Choose how you want to make a difference in the organ donation movement
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
             <div className="bg-primary/10 p-4 rounded-full inline-flex mb-4 group-hover:bg-primary/20 transition-colors">
@@ -91,15 +97,17 @@ const GetInvolved: React.FC = () => {
       </ContentContainer>
 
       {/* How It Works Section */}
-      <ContentContainer className="py-16">
+      <ContentContainer className="py-16 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-primary/10 p-3 rounded-full inline-flex mb-6">
-            <BookOpen className="text-primary h-6 w-6" />
+          <div className="text-center mb-12">
+            <div className="bg-primary/10 p-4 rounded-full inline-flex mb-6">
+              <BookOpen className="text-primary h-6 w-6" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6">How It Works</h2>
+            <p className="text-xl text-gray-700 mb-12">
+              Step-by-Step Guide to Becoming an Organ Donor
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6">How It Works</h2>
-          <p className="text-xl text-gray-700 mb-12">
-            Step-by-Step Guide to Becoming an Organ Donor
-          </p>
           <p className="text-gray-700 mb-10">
             Choosing to be an organ donor is a simple but life-altering decision. Whether you choose to donate 
             during your life or after death, the procedure is governed by precise medical and legal guidelines. 
@@ -194,7 +202,7 @@ const GetInvolved: React.FC = () => {
           </div>
 
           {/* Legal Framework Section */}
-          <div className="bg-gray-50 rounded-xl p-8 mb-12">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-12 border border-blue-100">
             <h3 className="text-2xl font-display font-semibold mb-6 flex items-center">
               <Shield className="text-primary h-6 w-6 mr-3" />
               Legal Framework in India
