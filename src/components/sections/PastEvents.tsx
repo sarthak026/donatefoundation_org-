@@ -98,16 +98,40 @@ const PastEvents: React.FC = () => {
             <h3 className="text-2xl font-semibold text-gray-800">Event Videos</h3>
           </div>
           
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-md border border-gray-100">
-            <div className="text-center py-12">
-              <div className="w-16 h-16 bg-gradient-to-r from-secondary/20 to-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Play className="h-8 w-8 text-secondary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Video Placeholder 1 */}
+            <Card className="overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-0 rounded-xl">
+              <div className="aspect-video relative bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Play className="h-8 w-8 text-primary" />
+                  </div>
+                  <h4 className="text-white font-semibold">Community Awareness Video</h4>
+                  <p className="text-white/80 text-sm">Coming Soon</p>
+                </div>
               </div>
-              <h4 className="text-xl font-semibold text-gray-800 mb-2">Video Content Coming Soon</h4>
-              <p className="text-gray-600">
-                We're preparing inspiring video content from our past events to share with you.
-              </p>
-            </div>
+              <CardContent className="p-4">
+                <h4 className="text-lg font-semibold text-gray-800 mb-2">Educational Workshop Highlights</h4>
+                <p className="text-gray-600 text-sm">Key moments from our community outreach programs</p>
+              </CardContent>
+            </Card>
+
+            {/* Video Placeholder 2 */}
+            <Card className="overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-0 rounded-xl">
+              <div className="aspect-video relative bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Play className="h-8 w-8 text-secondary" />
+                  </div>
+                  <h4 className="text-white font-semibold">Impact Stories Video</h4>
+                  <p className="text-white/80 text-sm">Coming Soon</p>
+                </div>
+              </div>
+              <CardContent className="p-4">
+                <h4 className="text-lg font-semibold text-gray-800 mb-2">Donor Family Testimonials</h4>
+                <p className="text-gray-600 text-sm">Real stories of hope and transformation through organ donation</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
