@@ -263,7 +263,7 @@ const Donate: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
             <div className="bg-gray-100 p-6 text-center">
-              <h3 className="text-xl font-semibold">Bronze Sponsor</h3>
+              
               <p className="text-3xl font-bold mt-2 mb-1">₹25,000</p>
               <p className="text-gray-600">Annual contribution</p>
             </div>
@@ -282,13 +282,13 @@ const Donate: React.FC = () => {
                   <span>Certificate of appreciation</span>
                 </li>
               </ul>
-              <Button variant="outline" className="w-full">Become Bronze Sponsor</Button>
+              
             </div>
           </div>
           
           <div className="bg-white rounded-xl shadow-md overflow-hidden border-2 border-primary transform md:-translate-y-4">
             <div className="bg-primary p-6 text-center text-white">
-              <h3 className="text-xl font-semibold">Silver Sponsor</h3>
+              
               <p className="text-3xl font-bold mt-2 mb-1">₹50,000</p>
               <p className="text-white/90">Annual contribution</p>
             </div>
@@ -317,7 +317,7 @@ const Donate: React.FC = () => {
           
           <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
             <div className="bg-gray-100 p-6 text-center">
-              <h3 className="text-xl font-semibold">Gold Sponsor</h3>
+              
               <p className="text-3xl font-bold mt-2 mb-1">₹1,00,000</p>
               <p className="text-gray-600">Annual contribution</p>
             </div>
