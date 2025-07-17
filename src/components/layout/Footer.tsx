@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Youtube, X } from 'lucide-react';
-
 const Footer: React.FC = () => {
-  return (
-    <footer className="bg-gray-50 pt-16 pb-8">
+  return <footer className="bg-gray-50 pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Organization Info */}
@@ -37,10 +34,13 @@ const Footer: React.FC = () => {
           {/* Contact */}
           <div>
             <h3 className="font-display font-semibold text-lg mb-4">Contact Us</h3>
-            <p className="text-gray-600 mb-2">1234 Life Avenue</p>
-            <p className="text-gray-600 mb-2">San Francisco, CA 94101</p>
             <p className="text-gray-600 mb-2">info@donatelife.org</p>
-            <p className="text-gray-600">+1 (800) 555-LIFE</p>
+            <p className="text-gray-600 mb-2">
+          </p>
+            <p className="text-gray-600 mb-2">
+          </p>
+            <p className="text-gray-600">
+          </p>
           </div>
 
           {/* Newsletter */}
@@ -48,11 +48,7 @@ const Footer: React.FC = () => {
             <h3 className="font-display font-semibold text-lg mb-4">Join Our Newsletter</h3>
             <p className="text-gray-600 mb-4">Stay updated on our programs and impact stories.</p>
             <form className="flex flex-col space-y-2">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
-                className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-              />
+              <input type="email" placeholder="Your email address" className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
               <button type="submit" className="btn-primary py-2">Subscribe</button>
             </form>
           </div>
@@ -61,19 +57,19 @@ const Footer: React.FC = () => {
         {/* Social Media */}
         <div className="flex justify-center space-x-6 mb-8">
           <a href="#" className="text-gray-600 hover:text-primary transition-colors" aria-label="Facebook">
-            <Facebook size={20} />
+            
           </a>
           <a href="#" className="text-gray-600 hover:text-primary transition-colors" aria-label="Instagram">
             <Instagram size={20} />
           </a>
           <a href="#" className="text-gray-600 hover:text-primary transition-colors" aria-label="Twitter">
-            <X size={20} />
+            
           </a>
           <a href="#" className="text-gray-600 hover:text-primary transition-colors" aria-label="LinkedIn">
-            <Linkedin size={20} />
+            
           </a>
           <a href="#" className="text-gray-600 hover:text-primary transition-colors" aria-label="YouTube">
-            <Youtube size={20} />
+            
           </a>
         </div>
 
@@ -89,8 +85,6 @@ const Footer: React.FC = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
