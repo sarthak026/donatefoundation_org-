@@ -1,22 +1,15 @@
-
 import React from 'react';
 import ContentContainer from '../components/common/ContentContainer';
 import DonateButton from '../components/ui/DonateButton';
 import { Button } from '@/components/ui/button';
 import { Heart, Users, Shield, BookOpen, Globe, Lightbulb, HandHeart, Target } from 'lucide-react';
-
 const About: React.FC = () => {
-  return (
-    <>
+  return <>
       {/* Hero Section with Background Image */}
       <div className="relative pt-24 pb-20 bg-gradient-to-br from-primary via-primary/90 to-secondary overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-secondary/95"></div>
         <div className="absolute inset-0 opacity-20">
-          <img 
-            src="/lovable-uploads/254d10a2-79a1-4365-9fb3-d9dd964afd0e.png" 
-            alt="Community engagement background" 
-            className="w-full h-full object-cover"
-          />
+          <img src="/lovable-uploads/254d10a2-79a1-4365-9fb3-d9dd964afd0e.png" alt="Community engagement background" className="w-full h-full object-cover" />
         </div>
         <ContentContainer>
           <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -45,9 +38,7 @@ const About: React.FC = () => {
               </div>
               <h2 className="text-3xl font-display font-semibold text-primary">Our Mission</h2>
             </div>
-            <p className="text-gray-700 mb-4">
-              At DONATE, we aim to bridge the gap in organ donation awareness through inclusive outreach, ethical advocacy, and transformative education.
-            </p>
+            <p className="text-gray-700 mb-4">We aim to bridge the gap in organ donation awareness through inclusive outreach, ethical advocacy, and transformative education.</p>
             <p className="text-gray-700">
               We are committed to dispelling myths, promoting transparency, and fostering global dialogue on organ transplantation.
             </p>
@@ -76,27 +67,17 @@ const About: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display font-semibold mb-12 text-center">Our Story</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <p className="text-lg text-gray-700 mb-6">
-                DONATE was founded with a singular goal: to break down barriers in organ donation awareness. Our inspiration came from witnessing the life-changing impact of organ transplantation and the disparities in knowledge and access in rural and underserved areas.
-              </p>
+              <p className="text-lg text-gray-700 mb-6">Founded with a singular goal: to break down barriers in organ donation awareness. Our inspiration came from witnessing the life-changing impact of organ transplantation and the disparities in knowledge and access in rural and underserved areas.</p>
               <p className="text-lg text-gray-700">
                 Through a combination of community outreach, educational initiatives, and policy advocacy, we strive to make organ donation a symbol of humanity and hope.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="/lovable-uploads/e0f53023-698d-432d-97c8-689af2f235de.png" 
-                  alt="Educational workshop with community" 
-                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                />
+                <img src="/lovable-uploads/e0f53023-698d-432d-97c8-689af2f235de.png" alt="Educational workshop with community" className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300" />
               </div>
               <div className="rounded-xl overflow-hidden shadow-lg mt-8">
-                <img 
-                  src="/lovable-uploads/f1ff8a96-c999-4319-aade-e4a5cee10edf.png" 
-                  alt="Mission outreach activities" 
-                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                />
+                <img src="/lovable-uploads/f1ff8a96-c999-4319-aade-e4a5cee10edf.png" alt="Mission outreach activities" className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300" />
               </div>
             </div>
           </div>
@@ -119,11 +100,7 @@ const About: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-              <img 
-                src="/lovable-uploads/7f33df0a-fc8e-4ecb-ac01-2d158466dbec.png" 
-                alt="Team building and volunteer engagement" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+              <img src="/lovable-uploads/7f33df0a-fc8e-4ecb-ac01-2d158466dbec.png" alt="Team building and volunteer engagement" className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-xl font-semibold mb-2">Volunteer Engagement</h3>
@@ -132,11 +109,7 @@ const About: React.FC = () => {
             </div>
             
             <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-              <img 
-                src="/lovable-uploads/05135849-ef60-4f5f-a5d9-652674e0492b.png" 
-                alt="One-on-one community dialogue" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+              <img src="/lovable-uploads/05135849-ef60-4f5f-a5d9-652674e0492b.png" alt="One-on-one community dialogue" className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-xl font-semibold mb-2">Personal Connections</h3>
@@ -145,11 +118,7 @@ const About: React.FC = () => {
             </div>
             
             <div className="relative group overflow-hidden rounded-2xl shadow-lg">
-              <img 
-                src="/lovable-uploads/2c805cd6-bd0d-4f2c-bfc8-1771623cf03e.png" 
-                alt="Community awareness and connections" 
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+              <img src="/lovable-uploads/2c805cd6-bd0d-4f2c-bfc8-1771623cf03e.png" alt="Community awareness and connections" className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-xl font-semibold mb-2">Community Connections</h3>
@@ -223,8 +192,6 @@ const About: React.FC = () => {
       </ContentContainer>
 
       <DonateButton />
-    </>
-  );
+    </>;
 };
-
 export default About;
