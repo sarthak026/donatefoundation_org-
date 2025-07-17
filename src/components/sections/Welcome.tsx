@@ -7,7 +7,11 @@ const Welcome: React.FC = () => {
         <p className="text-lg text-gray-700 italic mb-6">"Every day across India, thousands await the precious gift of life. At Donate Foundation, we bridge the gap between those in need and those willing to give. When I lost my Grandfather waiting for a kidney transplant, I discovered that awareness, not scarcity, was the barrier. Today, we've helped register over 100 donors and supported multiple families through the donation journey. Join us in building a future where no life is lost waiting."</p>
         <div className="flex items-center justify-center bg-gray-50">
           <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
-            
+            <img 
+              src="/lovable-uploads/70116e1f-5a86-4af3-aaf0-87b95e57fcd8.png" 
+              alt="Ameya - Founder" 
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="text-left">
             <p className="font-semibold">Ameya</p>
