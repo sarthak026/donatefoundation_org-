@@ -11,9 +11,7 @@ const Footer: React.FC = () => {
               <span className="text-primary font-display font-bold text-xl">Donate</span>
               <span className="text-secondary font-display font-bold text-xl">Life</span>
             </div>
-            <p className="text-gray-600 mb-4">
-              A non-profit dedicated to saving lives through organ donation awareness, counseling, and outreach programs.
-            </p>
+            
             <p className="text-gray-600 mb-2">501(c)(3) Organization</p>
             <p className="text-gray-600">EIN: 12-3456789</p>
           </div>
