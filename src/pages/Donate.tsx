@@ -254,98 +254,16 @@ const Donate: React.FC = () => {
 
       {/* Sponsorship Tiers */}
       <ContentContainer className="bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 py-16">
-        <div className="text-center mb-12">
-          <div className="bg-primary/10 p-4 rounded-full inline-flex mb-6">
-            <Landmark className="text-primary h-6 w-6" />
-          </div>
-          <h2 className="text-3xl font-display font-semibold mb-6">Sponsorship Opportunities</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Partner with us and make a lasting impact through structured sponsorship programs
-          </p>
-        </div>
+        
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-            <div className="bg-gray-100 p-6 text-center">
-              <h3 className="text-xl font-semibold">Bronze Sponsor</h3>
-              <p className="text-3xl font-bold mt-2 mb-1">₹25,000</p>
-              <p className="text-gray-600">Annual contribution</p>
-            </div>
-            <div className="p-6">
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Logo on website</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Recognition in annual report</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Certificate of appreciation</span>
-                </li>
-              </ul>
-              <Button variant="outline" className="w-full">Become Bronze Sponsor</Button>
-            </div>
-          </div>
           
-          <div className="bg-white rounded-xl shadow-md overflow-hidden border-2 border-primary transform md:-translate-y-4">
-            <div className="bg-primary p-6 text-center text-white">
-              <h3 className="text-xl font-semibold">Silver Sponsor</h3>
-              <p className="text-3xl font-bold mt-2 mb-1">₹50,000</p>
-              <p className="text-white/90">Annual contribution</p>
-            </div>
-            <div className="p-6">
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>All Bronze benefits</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Logo on event banners</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Social media recognition</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Quarterly impact reports</span>
-                </li>
-              </ul>
-              <Button className="w-full">Become Silver Sponsor</Button>
-            </div>
-          </div>
+          
+          
           
           <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-            <div className="bg-gray-100 p-6 text-center">
-              <h3 className="text-xl font-semibold">Gold Sponsor</h3>
-              <p className="text-3xl font-bold mt-2 mb-1">₹1,00,000</p>
-              <p className="text-gray-600">Annual contribution</p>
-            </div>
-            <div className="p-6">
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>All Silver benefits</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Featured sponsor at major events</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Co-branded awareness materials</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">✓</span>
-                  <span>Employee volunteering opportunities</span>
-                </li>
-              </ul>
-              <Button variant="outline" className="w-full">Become Gold Sponsor</Button>
-            </div>
+            
+            
           </div>
         </div>
       </ContentContainer>
