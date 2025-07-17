@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ContentContainer from '../components/common/ContentContainer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -6,17 +5,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { BadgeCheck, BookOpen, Users, Award, FileText, ChartBar, Heart, Globe, Shield, Calendar, Target, TrendingUp, AlertCircle, CheckCircle2, MapPin, GraduationCap, Handshake, Megaphone, Users2, Database, RefreshCw, Radio, Computer, Link, Smartphone, DollarSign, Hospital, ReceiptText, Tv, Stethoscope, ClipboardList, Dna } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import DonateButton from '../components/ui/DonateButton';
-
 const WhatWeDo: React.FC = () => {
   return <>
       {/* Hero Section with Background */}
       <div className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/lovable-uploads/f1ff8a96-c999-4319-aade-e4a5cee10edf.png" 
-            alt="Community working together"
-            className="w-full h-full object-cover"
-          />
+          <img src="/lovable-uploads/f1ff8a96-c999-4319-aade-e4a5cee10edf.png" alt="Community working together" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-secondary/70"></div>
         </div>
         
@@ -27,7 +21,9 @@ const WhatWeDo: React.FC = () => {
               <span className="text-sm font-medium">OUR MISSION</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white drop-shadow-lg animate-fade-in">What We Do</h1>
-            <p className="text-xl text-white/95 mb-10 animate-fade-in drop-shadow-md" style={{animationDelay: '0.2s'}}>
+            <p className="text-xl text-white/95 mb-10 animate-fade-in drop-shadow-md" style={{
+            animationDelay: '0.2s'
+          }}>
               Our mission is to create a culture where organ donation is embraced as a fundamental 
               human value, saving thousands of lives each year through education, 
               support, and community action.
@@ -38,7 +34,9 @@ const WhatWeDo: React.FC = () => {
 
       {/* Introduction Section */}
       <ContentContainer className="py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-fade-in" style={{animationDelay: '0.4s'}}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-fade-in" style={{
+        animationDelay: '0.4s'
+      }}>
           <div>
             <h2 className="text-3xl font-display font-semibold mb-6 text-primary" id="workshops">Our Approach</h2>
             <p className="text-gray-700 mb-6">
@@ -65,14 +63,18 @@ const WhatWeDo: React.FC = () => {
       <ContentContainer className="py-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6 text-center animate-fade-in">Programs and Initiatives</h2>
-          <p className="text-xl text-gray-700 mb-12 text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl text-gray-700 mb-12 text-center animate-fade-in" style={{
+          animationDelay: '0.2s'
+        }}>
             At DONATE, our initiatives are designed to address the gaps in awareness, access, and ethical 
             practices related to organ donation - because every life saved is a story rewritten.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Promoting Deceased Organ Donation */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{animationDelay: '0.4s'}}>
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{
+            animationDelay: '0.4s'
+          }}>
               <div className="bg-primary/10 p-3 rounded-full inline-flex mb-4">
                 <Heart className="text-primary h-6 w-6" />
               </div>
@@ -111,7 +113,9 @@ const WhatWeDo: React.FC = () => {
             </div>
 
             {/* Rural Outreach Program */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{animationDelay: '0.6s'}}>
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{
+            animationDelay: '0.6s'
+          }}>
               <div className="bg-secondary/10 p-3 rounded-full inline-flex mb-4">
                 <MapPin className="text-secondary h-6 w-6" />
               </div>
@@ -130,7 +134,9 @@ const WhatWeDo: React.FC = () => {
             </div>
 
             {/* Advocating for Ethical Practices */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{animationDelay: '0.8s'}}>
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{
+            animationDelay: '0.8s'
+          }}>
               <div className="bg-primary/10 p-3 rounded-full inline-flex mb-4">
                 <Shield className="text-primary h-6 w-6" />
               </div>
@@ -149,7 +155,9 @@ const WhatWeDo: React.FC = () => {
             </div>
 
             {/* Education and Enablement */}
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{animationDelay: '1.0s'}}>
+            <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 card-hover animate-fade-in" style={{
+            animationDelay: '1.0s'
+          }}>
               <div className="bg-secondary/10 p-3 rounded-full inline-flex mb-4">
                 <GraduationCap className="text-secondary h-6 w-6" />
               </div>
@@ -168,7 +176,9 @@ const WhatWeDo: React.FC = () => {
           </div>
 
           {/* Additional Programs */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in" style={{animationDelay: '1.2s'}}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in" style={{
+          animationDelay: '1.2s'
+        }}>
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center card-hover">
               <div className="bg-primary/10 p-3 rounded-full inline-flex mb-4">
                 <Users2 className="text-primary h-6 w-6" />
@@ -231,7 +241,9 @@ const WhatWeDo: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {/* National Organ Donation Framework */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 card-hover animate-fade-in border border-blue-100" style={{animationDelay: '0.2s'}}>
+            <div className="bg-white rounded-2xl shadow-xl p-8 card-hover animate-fade-in border border-blue-100" style={{
+            animationDelay: '0.2s'
+          }}>
               <div className="bg-gradient-to-r from-blue-500 to-indigo-500 p-4 rounded-full inline-flex mb-6">
                 <Database className="text-white h-8 w-8" />
               </div>
@@ -257,7 +269,9 @@ const WhatWeDo: React.FC = () => {
             </div>
 
             {/* State-Level Success Stories */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 card-hover animate-fade-in border border-green-100" style={{animationDelay: '0.4s'}}>
+            <div className="bg-white rounded-2xl shadow-xl p-8 card-hover animate-fade-in border border-green-100" style={{
+            animationDelay: '0.4s'
+          }}>
               <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-4 rounded-full inline-flex mb-6">
                 <MapPin className="text-white h-8 w-8" />
               </div>
@@ -292,7 +306,9 @@ const WhatWeDo: React.FC = () => {
           </div>
 
           {/* Digital Transformation */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 card-hover animate-fade-in border border-purple-100 mb-8" style={{animationDelay: '0.6s'}}>
+          <div className="bg-white rounded-2xl shadow-xl p-8 card-hover animate-fade-in border border-purple-100 mb-8" style={{
+          animationDelay: '0.6s'
+        }}>
             <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full inline-flex mb-6">
               <Computer className="text-white h-8 w-8" />
             </div>
@@ -325,7 +341,9 @@ const WhatWeDo: React.FC = () => {
           </div>
 
           {/* Remarkable Government Strategies */}
-          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl shadow-xl p-8 text-white animate-fade-in" style={{animationDelay: '0.8s'}}>
+          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl shadow-xl p-8 text-white animate-fade-in" style={{
+          animationDelay: '0.8s'
+        }}>
             <h3 className="text-3xl font-bold mb-8 text-center">Remarkable Government Strategies</h3>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -665,7 +683,7 @@ const WhatWeDo: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&q=80" alt="Support group meeting" className="w-full h-64 object-cover rounded-lg" />
+            
           </TabsContent>
           
           <TabsContent value="partnerships" className="bg-white p-6 rounded-xl shadow-sm">
@@ -705,7 +723,7 @@ const WhatWeDo: React.FC = () => {
             <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <img src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=200&auto=format&q=80" alt="Arjun Sharma" className="w-16 h-16 rounded-full object-cover mr-4" />
+                  
                   <div>
                     <h3 className="font-semibold text-xl">Arjun Sharma</h3>
                     <p className="text-primary">Heart Recipient</p>
@@ -723,7 +741,7 @@ const WhatWeDo: React.FC = () => {
             <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&auto=format&q=80" alt="Priya Malhotra" className="w-16 h-16 rounded-full object-cover mr-4" />
+                  
                   <div>
                     <h3 className="font-semibold text-xl">Priya Malhotra</h3>
                     <p className="text-secondary">Donor Family Member</p>
@@ -849,5 +867,4 @@ const WhatWeDo: React.FC = () => {
       <DonateButton />
     </>;
 };
-
 export default WhatWeDo;
