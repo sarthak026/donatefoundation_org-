@@ -802,7 +802,7 @@ const GetInvolved: React.FC = () => {
               <div className="p-6 space-y-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-semibold">Free Supporter</h4>
+                    <h4 className="font-semibold">Supporter</h4>
                     <p className="text-gray-600">Basic updates and involvement</p>
                   </div>
                   <Button variant="outline">Join</Button>
@@ -811,7 +811,7 @@ const GetInvolved: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="font-semibold">Advocate</h4>
-                    <p className="text-gray-600">₹1,000/year - Enhanced benefits</p>
+                    <p className="text-gray-600">Enhanced benefits</p>
                   </div>
                   <Button>Join</Button>
                 </div>
@@ -819,7 +819,7 @@ const GetInvolved: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <h4 className="font-semibold">Champion</h4>
-                    <p className="text-gray-600">₹5,000/year - Premium benefits</p>
+                    <p className="text-gray-600">Premium benefits</p>
                   </div>
                   <Button className="bg-secondary hover:bg-secondary/90">Join</Button>
                 </div>
