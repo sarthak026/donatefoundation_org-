@@ -211,11 +211,11 @@ const AboutOrganDonation: React.FC = () => {
 
         {/* Main Content Tabs */}
         <Tabs defaultValue="overview" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-8 shadow-lg p-1 bg-green-800 rounded-md">
-            <TabsTrigger value="overview" className="rounded-lg text-stone-950 bg-green-300 hover:bg-green-200 mx-[22px] my-0 px-0 py-[5px]">Overview</TabsTrigger>
-            <TabsTrigger value="myths" className="rounded-lg text-zinc-950 bg-green-300 hover:bg-green-200 mx-[22px]">Myths & Facts</TabsTrigger>
-            <TabsTrigger value="statistics" className="rounded-lg text-gray-950 bg-green-300 hover:bg-green-200 mx-[22px]">Statistics</TabsTrigger>
-            <TabsTrigger value="organs" className="rounded-lg text-zinc-950 bg-green-300 hover:bg-green-200 mx-[22px]">Organ Types</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-4 mb-8 bg-white shadow-lg rounded-xl p-1">
+            <TabsTrigger value="overview" className="rounded-lg text-neutral-950 bg-green-300 hover:bg-green-200">Overview</TabsTrigger>
+            <TabsTrigger value="myths" className="rounded-lg">Myths & Facts</TabsTrigger>
+            <TabsTrigger value="statistics" className="rounded-lg">Statistics</TabsTrigger>
+            <TabsTrigger value="organs" className="rounded-lg">Organ Types</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-8">
