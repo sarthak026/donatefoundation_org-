@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
         <NavLink to="/" className="flex items-center transform hover:scale-105 transition-all duration-300">
           <div className="flex items-center">
             <span className="font-display font-bold text-2xl animate-pulse-shadow text-green-900">Donate</span>
-            <span className="font-display font-bold text-2xl text-orange-500">Life</span>
+            <span className="font-display font-bold text-2xl text-orange-500">Foundation </span>
           </div>
         </NavLink>
 
