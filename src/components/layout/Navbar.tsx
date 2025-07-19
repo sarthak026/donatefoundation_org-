@@ -23,12 +23,13 @@ const Navbar: React.FC = () => {
   }, {
     text: 'Get Involved',
     path: '/get-involved'
-  }, {
-    text: 'Donate',
-    path: '/donate'
+ 
   }, {
     text: 'Resources',
     path: '/resources'
+  }, {
+    text: 'Gallery',
+    path: '/gallery'
   }, {
     text: 'Contact',
     path: '/contact'
@@ -36,9 +37,10 @@ const Navbar: React.FC = () => {
   return <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <NavLink to="/" className="flex items-center transform hover:scale-105 transition-all duration-300">
-          <div className="flex items-center">
-            <span className="font-display font-bold text-2xl animate-pulse-shadow text-green-900">Donate</span>
-            <span className="font-display font-bold text-2xl text-orange-500">Foundation </span>
+          <div className="flex items-center space-x-2">
+            <img src="public/logo .jpg" alt="Donate Foundation Logo" className="h-14 w-auto" />
+            <span className="font-display font-bold text-2xl animate-pulse-shadow text-red-600">Donate</span>
+            <span className="font-display font-bold text-2xl text-blue-600">Foundation </span>
           </div>
         </NavLink>
 

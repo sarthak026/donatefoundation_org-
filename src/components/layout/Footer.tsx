@@ -8,8 +8,10 @@ const Footer: React.FC = () => {
           {/* Organization Info */}
           <div>
             <div className="flex items-center mb-4">
+              <img src="public/logo .jpg" alt="Donate Foundation Logo" className="h-14 w-auto mb-2" />
+              <div className="flex items-center"></div>
               <span className="text-primary font-display font-bold text-xl">Donate</span>
-              <span className="text-secondary font-display font-bold text-xl">Life</span>
+              <span className="text-secondary font-display font-bold text-xl">Foundation</span>
             </div>
             <p className="text-gray-600 mb-4">
               A non-profit dedicated to saving lives through organ donation awareness, counseling, and outreach programs.
@@ -27,8 +29,8 @@ const Footer: React.FC = () => {
               <li><Link to="/about" className="text-gray-600 hover:text-primary transition-colors">About Us</Link></li>
               <li><Link to="/what-we-do" className="text-gray-600 hover:text-primary transition-colors">What We Do</Link></li>
               <li><Link to="/get-involved" className="text-gray-600 hover:text-primary transition-colors">Get Involved</Link></li>
-              <li><Link to="/donate" className="text-gray-600 hover:text-primary transition-colors">Donate</Link></li>
               <li><Link to="/resources" className="text-gray-600 hover:text-primary transition-colors">Resources</Link></li>
+              <li><Link to="/gallery" className="text-gray-600 hover:text-primary transition-colors">Gallery</Link></li>
               <li><Link to="/contact" className="text-gray-600 hover:text-primary transition-colors">Contact Us</Link></li>
             </ul>
           </div>
@@ -36,7 +38,7 @@ const Footer: React.FC = () => {
           {/* Contact */}
           <div>
             <h3 className="font-display font-semibold text-lg mb-4">Contact Us</h3>
-            <p className="text-gray-600 mb-2">info@donatelife.org</p>
+            <p className="text-gray-600 mb-2">info@donatefoundation.org</p>
             <p className="text-gray-600 mb-2">
           </p>
             <p className="text-gray-600 mb-2">

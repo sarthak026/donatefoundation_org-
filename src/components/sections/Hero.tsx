@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart, ExternalLink } from 'lucide-react';
 const Hero: React.FC = () => {
-  return <section className="py-16 lg:py-24 bg-green-100">
+  return <section className="py-16 lg:py-24 bg-white-100">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -12,6 +12,8 @@ const Hero: React.FC = () => {
               <Heart className="h-4 w-4" />
               <span className="text-sm font-medium">MAKE AN IMPACT</span>
             </div>
+
+          
 
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">

@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1 text-gray-800">Email Us</h3>
-                    <p className="text-gray-700 mb-1">info@donatelife.org</p>
+                    <p className="text-gray-700 mb-1">info@donatefoundation.org</p>
                     <p className="text-gray-700 mb-1">
                   </p>
                     <p className="text-gray-700">
@@ -105,16 +105,7 @@ const Contact: React.FC = () => {
             
           </div>
         </div>
-      </ContentContainer>
-
-      {/* Map Section */}
-      <ContentContainer className="pb-16">
-        <div className="bg-gray-200 w-full h-80 rounded-xl overflow-hidden">
-          {/* This would be replaced by an actual map component or embed */}
-          <div className="w-full h-full flex items-center justify-center bg-gray-300">
-            <p className="text-gray-600 font-medium">Map Location Embed</p>
-          </div>
-        </div>
+      
       </ContentContainer>
 
       <DonateButton />
